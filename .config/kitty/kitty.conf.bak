@@ -1,0 +1,18 @@
+map kitty_mod+/      launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id
+
+font_family      FiraCode Nerd Font Mono
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size 14.0
+
+enabled_layouts fat:bias=80, stack 
+
+editor nvim
+
+shell fish
+
+# BEGIN_KITTY_THEME
+# Oceanic Material
+include current-theme.conf
+# END_KITTY_THEME

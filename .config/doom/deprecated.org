@@ -1,0 +1,158 @@
+#+title: Deprecated
+#+property: header-args :tangle no :results silent :lexical yes
+
+Things that are no longer used in the main config but are reserved for future refrence
+
+* Corfu
+#+begin_src elisp :tangle no
+(add-load-path! "~/.config/emacs/.local/straight/build-29.0.60/corfu/extensions/")
+(use-package! corfu-popupinfo)
+(use-package! corfu
+  :demand t
+  :custom
+  (corfu-auto t)
+  (corfu-auto-prefix 1)
+  (corfu-auto-delay 0.01)
+  (corfu-separator ?\s)
+  (corfu-quit-at-boundary 'separator)
+  (corfu-quit-no-match t)
+  (corfu-preview-current nil)
+  (corfu-preselect-first t)
+  (corfu-on-exact-match nil)
+  (corfu-echo-documentation nil)
+  (corfu-scroll-margin 10)
+  :init
+  (global-corfu-mode)
+  :config
+  (defun ++corfu-quit ()
+    (interactive)
+    (call-interactively 'corfu-quit)
+    (evil-normal-state +1))
+  (setq )
+  (map! :map global-map
+        :nvi "C-SPC" #'completion-at-point)
+  (map! :map corfu-map
+        :nvi "C-j" #'corfu-next
+        :nvi "C-k" #'corfu-previous
+        :nvi "C-l" #'corfu-insert
+        :nvi "C-;" #'corfu-insert
+        :nvi "TAB" #'corfu-insert
+        :nvi "<tab>" #'corfu-insert
+        :nvi "<escape>" #'++corfu-quit
+        :nvi "ESC" #'++corfu-quit)
+  ;; (global-company-mode -1)
+  (setq tab-always-indent 'complete)
+  (add-hook! '(prog-mode-hook
+               text-mode-hook)
+    (unless (display-graphic-p)
+      (corfu-terminal-mode +1))))
+
+(use-package! kind-icon
+  :after corfu
+  :custom
+  (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+
+;; Add extensions
+(use-package! cape
+  ;; :disabled
+  :after curfo
+  :init
+  ;; Add `completion-at-point-functions', used by `completion-at-point'.
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  ;;(add-to-list 'completion-at-point-functions #'cape-tex)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-keyword)
+  (add-to-list 'completion-at-point-functions #'cape-symbol)
+  ;;(add-to-list 'completion-at-point-functions #'cape-sgml)
+  ;;(add-to-list 'completion-at-point-functions #'cape-rfc1345)
+  (add-to-list 'completion-at-point-functions #'cape-abbrev)
+  ;;(add-to-list 'completion-at-point-functions #'cape-ispell)
+  ;;(add-to-list 'completion-at-point-functions #'cape-dict)
+  (add-to-list 'completion-at-point-functions #'cape-line)
+  :config
+  (setq cape-dabbrev-min-length 2
+        cape-dabbrev-check-other-buffers 'some))
+(setq corfu-bar-width 0.5)
+(custom-set-faces! `(corfu-bar :background ,(doom-color 'magenta)))
+#+end_src
+* LSP
+** Lsp-bridge
+#+begin_src elisp :tangle no
+(use-package! lsp-bridge
+  :load-path "~/.config/emacs/.local/lsp-bridge"
+  :mode
+  (("\\.ts\\'" . lsp-bridge-mode)))
+#+end_src
+** lsp-mode
+#+begin_src elisp :tangle no
+(use-package! lsp-mode
+  :custom
+  (lsp-completion-provider :none) ;; we use Corfu!
+  :init
+  (defun my/lsp-mode-setup-completion ()
+    (setf (alist-get 'styles (alist-get 'lsp-capf completion-category-defaults))
+          '(orderless))) ;; Configure orderless
+  :hook
+  (lsp-completion-mode . my/lsp-mode-setup-completion))
+#+end_src* Gerbil/Gambit
+#+begin_src elisp :tangle no
+(add-load-path! "~/.config/emacs/.local/lisps/")
+(use-package! geiser-gambit
+:after geiser)
+(use-package! gerbil-mode
+  ;; :when (getenv "GERBIL_HOME")
+  :mode (("\\.ss\\'"  . gerbil-mode)
+         ("\\.pkg\\'" . gerbil-mode))
+  :bind (:map comint-mode-map
+              (("C-S-n" . comint-next-input)
+               ("C-S-p" . comint-previous-input)
+               ("C-S-l" . clear-comint-buffer))
+              :map gerbil-mode-map
+              (("C-S-l" . clear-comint-buffer)))
+  :init
+  (setf gambit (getenv "GAMBIT_HOME"))
+  (setf gerbil (getenv "GERBIL_HOME"))
+  (autoload 'gerbil-mode
+    (concat gerbil "/etc/gerbil-mode.el") "Gerbil editing mode." t)
+  :hook
+  ((gerbil-mode . linum-mode)
+   (inferior-scheme-mode-hook . gambit-inferior-mode))
+  :config
+  (require 'gambit
+           (concat gambit
+                   (if (equal "nixos" (system-name))
+                     "/share/emacs/site-lisp/gambit.el"
+                     "/misc/gambit.el")))
+  (setf scheme-program-name (concat gerbil "/bin/gxi"))
+
+  (let ((tags (locate-dominating-file default-directory "TAGS")))
+    (when tags (visit-tags-table tags)))
+  (visit-tags-table (concat gerbil "/src/TAGS"))
+
+  (when (package-installed-p 'smartparens)
+    (sp-pair "'" nil :actions :rem)
+    (sp-pair "`" nil :actions :rem))
+
+  (defun clear-comint-buffer ()
+    (interactive)
+    (with-current-buffer "*scheme*"
+      (let ((comint-buffer-maximum-size 0))
+        (comint-truncate-buffer)))))
+
+(defun gerbil-setup-buffers ()
+  "Change current buffer mode to gerbil-mode and start a REPL"
+  (interactive)
+  (gerbil-mode)
+  (split-window-right)
+  (shrink-window-horizontally 2)
+  (let ((buf (buffer-name)))
+    (other-window 1)
+    (run-scheme "gxi")
+    (switch-to-buffer-other-window "*scheme*" nil)
+    (switch-to-buffer buf)))
+
+(global-set-key (kbd "C-c C-g") 'gerbil-setup-buffers)
+#+end_src

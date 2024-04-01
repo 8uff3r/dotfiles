@@ -1,0 +1,19 @@
+@document.meta
+title: tangletest
+authors: egolep
+tangle: {
+    languages: {
+        lua: ./test-lua-output.lua
+        python: ./test-python-output.py 
+        julia: ./test-julia-output.jl
+        rust: ./test-rust-output.rs
+        js: ./js_test.js
+    }
+    scope: all
+}
+@end
+
+@code js
+print("Hello")
+@end
+
