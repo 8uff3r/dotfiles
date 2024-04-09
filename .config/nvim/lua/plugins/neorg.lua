@@ -1,8 +1,5 @@
 return {
   "nvim-neorg/neorg",
-  build = ":Neorg sync-parsers",
-  run = ":Neorg sync-parsers",
-  opts = {},
   opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
@@ -28,5 +25,5 @@ return {
       ["core.integrations.telescope"] = {},
     },
   },
-  dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
+  dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" }, "vhyrro/luarocks.nvim" },
 }

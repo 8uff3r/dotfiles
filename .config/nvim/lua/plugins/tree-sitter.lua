@@ -97,6 +97,7 @@ return {
   { "JoosepAlviste/nvim-ts-context-commentstring", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   {
     "HiPhish/rainbow-delimiters.nvim",
+    enabled=false,
     config = function()
       require("rainbow-delimiters.setup").setup({})
     end,

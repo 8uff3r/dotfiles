@@ -119,12 +119,7 @@ return {
             },
           },
         },
-        nim_langserver = {},
         rust_analyzer = {},
-        stimulus_ls = {},
-        phpactor = {},
-        psalm = {},
-        -- intelephense = {},
         -- tsserver = {},
         lua_ls = {
           autostart = false,

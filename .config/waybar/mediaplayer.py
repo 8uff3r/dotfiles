@@ -79,7 +79,7 @@ def signal_handler(sig, frame):
 def parse_arguments():
     parser = argparse.ArgumentParser()
 
-    # Increase verbosity with every occurrence of -v
+    # Increase verbosity with every occurance of -v
     parser.add_argument('-v', '--verbose', action='count', default=0)
 
     # Define for which player we're listening
@@ -110,7 +110,6 @@ def main():
 
     signal.signal(signal.SIGINT, signal_handler)
     signal.signal(signal.SIGTERM, signal_handler)
-    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 
     for player in manager.props.player_names:
         if arguments.player is not None and arguments.player != player.name:
@@ -126,3 +125,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
