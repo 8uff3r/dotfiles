@@ -28,6 +28,12 @@ if status is-interactive
     fish_vi_key_bindings
     alias qr='qrencode -m 2 -t utf8'
     alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+  # Fedora
+    alias dnfi='sudo dnf install'
+    alias dnfr='sudo dnf remove'
+    alias dnfs='dnf search'
+    alias dnfu='sudo dnf update'
 end
 
 
