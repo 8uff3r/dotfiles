@@ -45,6 +45,6 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/rylan/\x2econfig/composer/vendor/bin\x1e/home/rylan/\x2edetaspace/bin\x1e/home/rylan/\x2eturso\x1e/home/rylan/\x2econfig/emacs/bin\x1e/home/rylan/\x2elocal/bin\x1e/home/rylan/\x2ecargo/bin\x1e/opt/flutter/bin\x1e/home/rylan/go/bin\x1e/home/rylan/\x2elocal/share/bob/nvim\x2dbin
+SETUVAR fish_user_paths:/home/mk/\x2ecargo/bin\x1e/home/rylan/\x2econfig/composer/vendor/bin\x1e/home/rylan/\x2edetaspace/bin\x1e/home/rylan/\x2eturso\x1e/home/rylan/\x2econfig/emacs/bin\x1e/home/rylan/\x2elocal/bin\x1e/home/rylan/\x2ecargo/bin\x1e/opt/flutter/bin\x1e/home/rylan/go/bin\x1e/home/rylan/\x2elocal/share/bob/nvim\x2dbin
 SETUVAR fish_vi_force_cursor:1
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
