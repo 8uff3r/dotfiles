@@ -1,8 +1,14 @@
 return {
   "akinsho/bufferline.nvim",
-  version = "v3.*",
   dependencies = "nvim-tree/nvim-web-devicons",
-  opts = {
-    options = { separator_style = "slant", numbers = "ordinal", always_show_bufferline = true },
-  },
+  opts = function()
+    return {
+      options = {
+        separator_style = "sloped",
+        numbers = "ordinal",
+        always_show_bufferline = true,
+        buffer_close_icon = "",
+      },
+    }
+  end,
 }
