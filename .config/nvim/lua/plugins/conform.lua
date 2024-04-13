@@ -17,6 +17,8 @@ return {
         javascript = { { "prettierd", "prettier", "dprint" } },
         html = { { "prettierd", "prettier" } },
         typescript = { { "prettierd", "prettier", "dprint" } },
+        typescriptreact = { { "prettierd", "prettier", "dprint" } },
+        jsx = { { "prettierd", "prettier", "dprint" } },
         json = { { "prettierd", "prettier", "dprint" } },
         vue = { { "prettierd", "prettier" } },
         svelte = { { "prettierd", "prettier" } },

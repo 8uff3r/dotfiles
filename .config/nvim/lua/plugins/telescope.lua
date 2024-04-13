@@ -18,7 +18,7 @@ return {
                 ["d"] = "delete_buffer",
               },
               i = {
-                ["<C-S-d>"] = "delete_buffer",
+                ["<C-d>"] = "delete_buffer",
               },
             },
           },
