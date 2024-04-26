@@ -4,14 +4,14 @@ if status is-interactive
   alias c='clear'
   alias podlp='yt-dlp -o "~/.porn/%(title)s[%(id)s].%(ext)s" '
   alias podl='youtube-dl -o "~/.porn/%(channel)s/%(title)s[%(id)s].%(ext)s"'
-  alias mvdl='youtube-dl -o "/home/rylan/Videos/YT/MVs/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
-  alias mvdlp='yt-dlp -o "/home/rylan/Videos/YT/MVs/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
+  alias mvdl='youtube-dl -o "~/Videos/YT/MVs/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
+  alias mvdlp='yt-dlp -o "~/Videos/YT/MVs/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
   alias gdl='gallery-dl'
-  alias ydlp='yt-dlp -o "/home/rylan/Videos/YT/%(channel)s/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
-  alias ydl='youtube-dl -o "/home/rylan/Videos/YT/%(channel)s/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
+  alias ydlp='yt-dlp -o "~/Videos/YT/%(channel)s/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
+  alias ydl='youtube-dl -o "~/Videos/YT/%(channel)s/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
   alias px='proxychains4'
   alias pxq='proxychains4 -q'
-  alias spdl='spotdl -o /home/rylan/Music/Spotdl --output-format opus'
+  alias spdl='spotdl -o ~/Music/Spotdl --output-format opus'
   alias ypdl='youtube-dl -o "~/Videos/YT/%(channel)s/%(playlist)s/%(playlist_index)02d. %(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
   alias ypdlp='yt-dlp -o "~/Videos/YT/%(channel)s/%(playlist)s/%(playlist_index)02d. %(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
   alias yp='yt-dlp'
@@ -38,7 +38,7 @@ end
 
 
 # pnpm
-set -gx PNPM_HOME "/home/rylan/.local/share/pnpm"
+set -gx PNPM_HOME "/home/mk/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end

@@ -110,12 +110,12 @@ return {
                 fieldalignment = true,
                 shadow = true,
               },
-              hints = {
-                compositeLiteralTypes = true,
-                constantValues = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-              },
+              -- hints = {
+              --   compositeLiteralTypes = true,
+              --   constantValues = true,
+              --   parameterNames = true,
+              --   rangeVariableTypes = true,
+              -- },
             },
           },
         },
