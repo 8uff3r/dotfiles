@@ -32,15 +32,17 @@ return {
       },
       formatters = {
         prettierd = {
-          command = "/home/rylan/.local/share/pnpm/prettierd",
+          command = "/home/mk/.local/share/pnpm/prettierd",
+          args = { "$FILENAME" },
+          stdin = true,
         },
         rustywind = {
-          command = "/home/rylan/.cargo/bin/rustywind",
+          command = "/home/mk/.cargo/bin/rustywind",
           args = { "--stdin" },
           stdin = true,
         },
         dprint = {
-          command = "/home/rylan/.dprint/bin/dprint",
+          command = "/home/mk/.dprint/bin/dprint",
           args = { "fmt", "--stdin", "$FILENAME" },
           stdin = true,
           cwd = require("conform.util").root_file({ "dprint.json" }),

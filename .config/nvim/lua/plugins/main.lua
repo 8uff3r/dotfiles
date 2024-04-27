@@ -2,6 +2,7 @@ return {
   { "Shatur/neovim-session-manager" },
   {
     "aserowy/tmux.nvim",
+    enabled = false,
     opts = {},
   },
   {

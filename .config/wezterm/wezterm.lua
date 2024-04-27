@@ -32,8 +32,11 @@ return {
 	bidi_direction = "AutoLeftToRight",
 	disable_default_key_bindings = true,
 	color_scheme = "ayu",
+	enable_wayland = false,
+
 	font = wezterm.font_with_fallback({
-		{ family = "FiraCode Nerd Font", weight = 480 },
+		{ family = "Jetbrains Mono", weight = 480 },
+		{ family = "Symbols Nerd Font Mono" },
 		{ family = "Vazir Code", weight = "DemiBold" },
 	}),
 	font_size = 14,
@@ -41,7 +44,7 @@ return {
 		{
 			italic = true,
 			font = wezterm.font({
-				family = "FiraCode Nerd Font",
+				family = "Jetbrains Mono",
 				weight = "DemiBold",
 				-- style = "Normal",
 			}),
