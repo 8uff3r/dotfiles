@@ -62,6 +62,7 @@ return {
   { "echasnovski/mini.comment", enabled = false },
   {
     "rcarriga/nvim-notify",
+    enabled = false,
     opts = {
       render = "minimal",
       stages = "fade",

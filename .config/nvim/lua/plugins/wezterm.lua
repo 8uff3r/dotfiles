@@ -32,7 +32,7 @@ function to(direction)
 end
 
 return {
-  "8uff3r/wezterm.nvim",
+  "willothy/wezterm.nvim",
   enabled = true,
   keys = {
     -- {
