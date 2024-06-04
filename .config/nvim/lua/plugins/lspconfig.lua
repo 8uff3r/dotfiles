@@ -121,6 +121,8 @@ return {
         },
         rust_analyzer = {},
         -- tsserver = {},
+        csharp_ls = {},
+        -- omnisharp = {},
         lua_ls = {
           autostart = false,
         },

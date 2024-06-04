@@ -59,7 +59,7 @@ return {
   },
 
   -- Disabled plugins
-  { "echasnovski/mini.comment", enabled = false },
+  -- { "echasnovski/mini.comment", enabled = false },
   {
     "rcarriga/nvim-notify",
     enabled = false,

@@ -87,7 +87,7 @@ return {
             plugins = {
               {
                 name = "@vue/typescript-plugin",
-                location = "/home/mk/.local/share/pnpm/global/5/node_modules/@vue/language-server/",
+                location = "/home/rylan/.local/share/pnpm/global/5/node_modules/@vue/language-server/",
                 languages = { "vue" },
               },
             },

@@ -15,7 +15,7 @@ return {
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
   { "dmmulroy/tsc.nvim", opts = {
-    bin_path = "/home/mk/.local/share/pnpm/tsc",
+    bin_path = "/home/rylan/.local/share/pnpm/tsc",
     auto_install = true,
   } },
   {
@@ -29,18 +29,18 @@ return {
       require("flutter-tools").setup({})
     end,
   },
-  {
-    "numToStr/Comment.nvim",
-    keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
-    opts = function()
-      return { pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook() }
-    end,
-    config = function()
-      local ft = require("Comment.ft")
-      ft.csharp = { "//%s", "/* %s */" }
-      require("Comment").setup()
-    end,
-  },
+  -- {
+  --   "numToStr/Comment.nvim",
+  --   keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
+  --   opts = function()
+  --     return { pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook() }
+  --   end,
+  --   config = function()
+  --     local ft = require("Comment.ft")
+  --     ft.csharp = { "//%s", "/* %s */" }
+  --     require("Comment").setup()
+  --   end,
+  -- },
   {
     "mrcjkb/rustaceanvim",
     opts = {
@@ -88,7 +88,7 @@ return {
           "@vue/typescript-plugin",
           -- {
           --   name = "@vue/typescript-plugin",
-          --   location = "/home/mk/.local/share/pnpm/global/5/node_modules/@vue/language-server/",
+          --   location = "/home/rylan/.local/share/pnpm/global/5/node_modules/@vue/language-server/",
           --   languages = { "vue" },
           -- },
         },
