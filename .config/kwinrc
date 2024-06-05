@@ -16,9 +16,10 @@ InsertionPoint=2
 padding=4
 
 [Tiling][1f792ed9-eba5-5d14-9e01-6e39fa9d8829]
-tiles={"layoutDirection":"horizontal","tiles":[]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5},{"width":0.5}]}
 
 [Windows]
+FocusPolicy=FocusFollowsMouse
 RollOverDesktops=true
 
 [Xwayland]
