@@ -42,59 +42,6 @@ return {
       },
       ---@type lspconfig.options
       servers = {
-        volar = {
-          init_options = {
-            typescript = {
-              tsdk = "/home/rylan/.local/share/pnpm/global/5/node_modules/typescript/lib/",
-            },
-          },
-          settings = {
-            vue = {
-              autoInsert = {
-                bracketSpacing = true,
-                dotValue = true,
-              },
-              inlayHints = {
-                inlineHandlerLeading = true,
-                missingProps = true,
-                optionsWrapper = true,
-              },
-            },
-            typescript = {
-              tsdk = "/home/rylan/.local/share/pnpm/global/5/node_modules/typescript/lib/",
-              updateImportsOnFileMove = {
-                enabled = "always",
-              },
-              preferences = {
-                quoteStyle = "double",
-                importModuleSpecifier = "relative",
-              },
-              autoClosingTags = true,
-              referencesCodeLens = {
-                enabled = true,
-                showOnAllFunctions = true,
-              },
-              implementationsCodeLens = true,
-              inlayHints = {
-                variableTypes = { enabled = false },
-                enumMemberValues = { enabled = true },
-                functionLikeReturnTypes = { enabled = true },
-                parameterNames = {
-                  enabled = "all",
-                  suppressWhenArgumentMatchesName = false,
-                },
-                parameterTypes = {
-                  enabled = true,
-                  suppressWhenTypeMatchesName = false,
-                },
-                propertyDeclarationTypes = { enabled = true },
-              },
-            },
-          },
-          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-          -- filetypes = { "vue", "json" },
-          cmd = { "/home/rylan/.local/share/pnpm/vue-language-server", "--stdio" },
-        },
         gopls = {
           settings = {
             gopls = {
@@ -122,19 +69,11 @@ return {
         rust_analyzer = {},
         -- tsserver = {},
         csharp_ls = {},
-        -- omnisharp = {},
         lua_ls = {
           autostart = false,
         },
       },
-      setup = {
-        tsserver = function(_, opt)
-          return true
-        end,
-        intelephense = function(_, opt)
-          return true
-        end,
-      },
+      setup = {},
 
       -- Specify * to use this function as a fallback for any server
       -- ["*"] = function(server, opts)
