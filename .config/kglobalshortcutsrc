@@ -1,9 +1,11 @@
 [ActivityManager]
-_k_friendly_name=System Settings
-switch-to-activity-9f7d6ba8-1810-4680-822e-928e6cd8c448=,none,Switch to activity "Media"
+_k_friendly_name=Activity Manager
+switch-to-activity-9f7d6ba8-1810-4680-822e-928e6cd8c448=none,none,Switch to activity "Media"
 switch-to-activity-f0ad716f-af23-42ae-b8b8-c861c26162fa=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
+Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
+Switch keyboard layout to Persian=none,none,Switch keyboard layout to Persian
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Keyboard Layout
 Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
@@ -41,7 +43,7 @@ _k_friendly_name=Session Management
 
 [kwin]
 Activate Window Demanding Attention=Meta+Ctrl+A,Meta+Ctrl+A,Activate Window Demanding Attention
-Cube=,Meta+C,Toggle Cube
+Cube=none,Meta+C,Toggle Cube
 Cycle Overview=none,none,Cycle through Overview and Grid View
 Cycle Overview Opposite=none,none,Cycle through Grid View and Overview
 Decrease Opacity=none,,Decrease Opacity of Active Window by 5%
@@ -56,10 +58,10 @@ Kill Window=Meta+Ctrl+Esc,Meta+Ctrl+Esc,Kill Window
 Move Tablet to Next Output=none,none,Move the tablet to the next output
 MoveMouseToCenter=Meta+F6,Meta+F6,Move Mouse to Center
 MoveMouseToFocus=Meta+F5,Meta+F5,Move Mouse to Focus
-MoveZoomDown=none,Meta+Ctrl+Down,Move Down
-MoveZoomLeft=none,Meta+Ctrl+Left,Move Left
-MoveZoomRight=none,Meta+Ctrl+Right,Move Right
-MoveZoomUp=none,Meta+Ctrl+Up,Move Up
+MoveZoomDown=none,none,Move Zoomed Area Downwards
+MoveZoomLeft=none,none,Move Zoomed Area to Left
+MoveZoomRight=none,none,Move Zoomed Area to Right
+MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=Meta+W,Meta+W,Toggle Overview
 PoloniumCycleEngine=Meta+|,none,Polonium: Cycle Engine
 PoloniumFocusAbove=Meta+K,none,Polonium: Focus Above

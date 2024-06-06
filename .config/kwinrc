@@ -4,16 +4,39 @@ Id_2=fdf1eb5e-b063-455b-b810-a0652b6eebad
 Number=2
 Rows=1
 
+[MaximizeTile]
+DisableOutlineTile=false
+DisableRoundTile=false
+
+[NightColor]
+Active=true
+Mode=Constant
+
 [Plugins]
 cubeEnabled=true
 desktopchangeosdEnabled=true
 poloniumEnabled=true
 
+[PrimaryOutline]
+ActiveOutlineUseCustom=false
+ActiveOutlineUsePalette=true
+InactiveOutlineThickness=2
+InactiveOutlineUseCustom=false
+InactiveOutlineUsePalette=true
+OutlineThickness=2
+
 [Script-polonium]
 InsertionPoint=2
 
+[SecondOutline]
+InactiveSecondOutlineThickness=0
+SecondOutlineThickness=0
+
+[Shadow]
+ActiveShadowAlpha=250
+
 [Tiling]
-padding=4
+padding=12
 
 [Tiling][1f792ed9-eba5-5d14-9e01-6e39fa9d8829]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5},{"width":0.5}]}
@@ -23,4 +46,13 @@ FocusPolicy=FocusFollowsMouse
 RollOverDesktops=true
 
 [Xwayland]
-Scale=1.05
+Scale=1
+
+[org.kde.kdecoration2]
+BorderSize=Normal
+BorderSizeAuto=false
+library=org.kde.klassy
+theme=Klassy
+
+[ًRound-Corners]
+InactiveShadowSize=1
