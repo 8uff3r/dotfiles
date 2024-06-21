@@ -4,6 +4,12 @@ Id_2=fdf1eb5e-b063-455b-b810-a0652b6eebad
 Number=2
 Rows=1
 
+[Effect-cube]
+MouseInvertedX=true
+
+[Input]
+TabletMode=off
+
 [MaximizeTile]
 DisableOutlineTile=false
 DisableRoundTile=false
@@ -20,12 +26,16 @@ poloniumEnabled=true
 [PrimaryOutline]
 ActiveOutlineUseCustom=false
 ActiveOutlineUsePalette=true
+InactiveOutlineAlpha=54
+InactiveOutlinePalette=14
 InactiveOutlineThickness=2
 InactiveOutlineUseCustom=false
 InactiveOutlineUsePalette=true
 OutlineThickness=2
 
 [Script-polonium]
+FilterCaption=Oblivion Desktop
+FilterProcess=krunner, yakuake, kded, polkit, plasmashell, kclient
 InsertionPoint=2
 
 [SecondOutline]
@@ -36,10 +46,13 @@ SecondOutlineThickness=0
 ActiveShadowAlpha=250
 
 [Tiling]
-padding=12
+padding=4
 
 [Tiling][1f792ed9-eba5-5d14-9e01-6e39fa9d8829]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5},{"width":0.5}]}
+tiles={"layoutDirection":"horizontal","tiles":[]}
+
+[Tiling][4c943ce7-7233-51dc-a576-44a70f9cf5ae]
+tiles={"layoutDirection":"horizontal","tiles":[{"layoutDirection":"vertical","tiles":[{"height":0.5},{"height":0.5}],"width":0.5},{"width":0.5}]}
 
 [Windows]
 FocusPolicy=FocusFollowsMouse
@@ -56,3 +69,4 @@ theme=Klassy
 
 [ًRound-Corners]
 InactiveShadowSize=1
+ShadowSize=1

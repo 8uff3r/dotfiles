@@ -22,9 +22,9 @@ if status is-interactive
   alias yaye='yay --editmenu --mflags --skipinteg'
   alias npm='pnpm'
   alias gitc1='git clone --depth 1'
-  alias dolphinr='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch dolphin &>/dev/null&'
-  alias systemsettingsr='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch systemsettings5 &>/dev/null&'
-  alias kater='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch kate &>/dev/null&'
+  alias dolphinr='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch dolphin &>/dev/null &'
+  alias systemsettingsr='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch systemsettings &>/dev/null &'
+  alias kater='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch kate &>/dev/null &'
   fish_vi_key_bindings
   alias qr='qrencode -m 2 -t utf8'
   alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -35,6 +35,10 @@ if status is-interactive
   alias dnfu='sudo dnf update'
   alias dnfs='dnf search'
   alias sp='export HTTP_PROXY=http://127.0.0.1:2081 && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY'
+
+  function csp
+    export HTTP_PROXY=$argv && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY
+  end
 end
 
 
