@@ -17,6 +17,7 @@ end
 -- map("n", "<C-j>", "<C-w>j")
 -- map("n", "<C-k>", "<C-w>k")
 
+-- vim.keymap.del("i", "<right>")
 -- vim.keymap.del("n", "<C-h>")
 -- vim.keymap.del("n", "<C-j>")
 -- vim.keymap.del("n", "<C-k>")

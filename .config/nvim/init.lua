@@ -2,7 +2,8 @@
 require("config.lazy")
 require("config.options")
 require("utils")
-
+-- Set to false to disable.
+vim.g.lazygit_config = false
 vim.cmd([[
 set mousemodel=extend
 ]])
