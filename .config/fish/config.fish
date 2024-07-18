@@ -34,7 +34,7 @@ if status is-interactive
   alias dnfr='sudo dnf remove'
   alias dnfu='sudo dnf update'
   alias dnfs='dnf search'
-  alias sp='export HTTP_PROXY=http://127.0.0.1:2081 && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY'
+  alias sp='export HTTP_PROXY=http://127.0.0.1:7890 && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY'
 
   function csp
     export HTTP_PROXY=$argv && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY

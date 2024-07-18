@@ -33,9 +33,9 @@ map("n", "<leader>bs", "<cmd>BufferLinePick<CR>", { desc = "Pick buffer" })
 map("n", "<leader>d", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
 map("n", "<leader>qs", "<cmd>SessionManager load_session<cr>", { desc = "Load a Session" })
 map("n", "<leader>qf", "<cmd>SessionManager load_current_dir_session<cr>", { desc = "Load current directory session" })
-map("n", "<leader>gg", "<cmd>Neogit cwd=%:p:h<cr>", { desc = "Negit current directory" })
-map("n", "<leader>gf", "<cmd>Neogit cwd=%:p:h kind='floating'<cr>", { desc = "Negit cwd floating" })
-map("n", "<leader>gs", "<cmd>Neogit cwd=%:p:h kind='split'<cr>", { desc = "Negit cwd split" })
+map("n", "<leader>gg", "<cmd>Neogit cwd=%:p:h<cr>", { desc = "Neogit current directory" })
+map("n", "<leader>gf", "<cmd>Neogit cwd=%:p:h kind='floating'<cr>", { desc = "Neogit cwd floating" })
+map("n", "<leader>gs", "<cmd>Neogit cwd=%:p:h kind='split'<cr>", { desc = "Neogit cwd split" })
 -- ToggleTerm
 -- if Util.has("toggleterm.nvim") then
 -- local toggle_term_cmd = helpers.toggle_term_cmd
