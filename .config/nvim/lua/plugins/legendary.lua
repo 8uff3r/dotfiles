@@ -8,7 +8,7 @@ return {
       keymaps = {
         { "<leader>sl", "<cmd>Legendary<cr>", description = "Legendary" },
       },
-      which_key = { auto_register = true },
+      extentsions = { which_key = { auto_register = true } },
     })
   end,
 }

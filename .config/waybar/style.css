@@ -9,26 +9,25 @@
   transition-duration: 0.5s;
 }
 
-
 /* Reset all styles */
 * {
-    border: none;
-    border-radius: 3px;
-    min-height: 0;
-    margin: 0.2em 0.3em 0.2em 0.3em;
+  border: none;
+  border-radius: 3px;
+  min-height: 0;
+  margin: 0.2em 0.3em 0.2em 0.3em;
 }
 
 /* The whole bar */
 #waybar {
-    /*background: @bg;*/
-    background-color: transparent;
-    /*color: @light;*/
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: 0.5s;
-    /*border-top: 8px transparent;*/
-    border-radius: 0px;
-    margin: 0px 0px;
+  /*background: @bg;*/
+  background-color: transparent;
+  /*color: @light;*/
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  /*border-top: 8px transparent;*/
+  border-radius: 0px;
+  margin: 0px 0px;
 }
 
 window#waybar.hidden {

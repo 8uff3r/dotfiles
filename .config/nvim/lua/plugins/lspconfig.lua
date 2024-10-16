@@ -68,7 +68,9 @@ return {
         },
         rust_analyzer = {},
         -- tsserver = {},
-        csharp_ls = {},
+        intelephense = {},
+        -- phpactor = {},
+        -- csharp_ls = {},
         lua_ls = {
           autostart = false,
         },

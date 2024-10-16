@@ -21,16 +21,23 @@ return {
         jsx = { { "prettierd", "prettier", "dprint" } },
         json = { { "prettierd", "prettier", "dprint" } },
         vue = { { "prettierd", "prettier" } },
+        php = { { "prettierd", "prettier" } },
         svelte = { { "prettierd", "prettier" } },
         yaml = { { "prettierd", "prettier" } },
         css = { { "prettierd", "prettier" } },
         scss = { { "prettierd", "prettier" } },
+        dart = { "dart" },
         -- Use the "*" filetype to run formatters on all files.
         -- Note that if you use this, you may want to set lsp_fallback = "always"
         -- (see :help conform.format)
         ["*"] = { "trim_whitespace" },
       },
       formatters = {
+        dart = {
+          command = "/home/rylan/.flutter/bin/dart",
+          args = { "format", "$FILENAME" },
+          stdin = false,
+        },
         prettierd = {
           command = "/home/rylan/.local/share/pnpm/prettierd",
           args = { "$FILENAME" },

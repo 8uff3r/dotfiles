@@ -7,6 +7,17 @@ Rows=1
 [Effect-cube]
 MouseInvertedX=true
 
+[Effect-ًRound-Corners]
+ActiveOutlineUseCustom=false
+ActiveOutlineUsePalette=true
+DisableOutlineTile=false
+DisableRoundTile=false
+InactiveOutlineAlpha=168
+InactiveOutlineThickness=2
+InactiveOutlineUseCustom=false
+InactiveOutlineUsePalette=true
+OutlineThickness=2
+
 [Input]
 TabletMode=off
 
@@ -21,6 +32,7 @@ Mode=Constant
 [Plugins]
 cubeEnabled=true
 desktopchangeosdEnabled=true
+kwin4_effect_shapecornersEnabled=true
 poloniumEnabled=true
 
 [PrimaryOutline]
@@ -46,16 +58,17 @@ SecondOutlineThickness=0
 ActiveShadowAlpha=250
 
 [Tiling]
-padding=4
+padding=8
 
 [Tiling][1f792ed9-eba5-5d14-9e01-6e39fa9d8829]
 tiles={"layoutDirection":"horizontal","tiles":[]}
 
 [Tiling][4c943ce7-7233-51dc-a576-44a70f9cf5ae]
-tiles={"layoutDirection":"horizontal","tiles":[{"layoutDirection":"vertical","tiles":[{"height":0.5},{"height":0.5}],"width":0.5},{"width":0.5}]}
+tiles={"layoutDirection":"floating","tiles":[]}
 
 [Windows]
 FocusPolicy=FocusFollowsMouse
+NextFocusPrefersMouse=true
 RollOverDesktops=true
 
 [Xwayland]
@@ -64,8 +77,6 @@ Scale=1
 [org.kde.kdecoration2]
 BorderSize=Normal
 BorderSizeAuto=false
-library=org.kde.klassy
-theme=Klassy
 
 [ًRound-Corners]
 InactiveShadowSize=1

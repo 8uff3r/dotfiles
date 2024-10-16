@@ -33,9 +33,10 @@ return {
 	disable_default_key_bindings = true,
 	color_scheme = "ayu",
 	enable_wayland = false,
+	warn_about_missing_glyphs = false,
 
 	font = wezterm.font_with_fallback({
-		{ family = "Jetbrains Mono", weight = 480 },
+		{ family = "Jetbrains Mono Nerd Font", weight = 480 },
 		{ family = "Symbols Nerd Font Mono" },
 		{ family = "Vazir Code", weight = "DemiBold" },
 	}),

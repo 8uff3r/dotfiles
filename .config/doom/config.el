@@ -19,7 +19,7 @@
 ;  ("\\*Equake*" :quit t)))
 (custom-set-faces
  `(mode-line ((t (:background ,"#1C1B21")))))
-(+global-word-wrap-mode)
+;(+global-word-wrap-mode)
 (setq fancy-splash-image "~/.config/doom/doom.png")
 (setq doom-modeline-major-mode-color-icon t)
 (setq doom-fallback-buffer-name "► Doom"
