@@ -15,8 +15,9 @@ return {
     lazy = false,
   },
   {
-    opts = {},
     "tiagovla/scope.nvim",
+    enabled = false,
+    opts = {},
     config = function()
       require("scope").setup()
     end,
