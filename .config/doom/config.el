@@ -598,3 +598,10 @@
 
 (use-package! rainbow-delimiters
   :hook ((typescript-ts-mode . rainbow-delimiters-mode)))
+
+(setq sly-lisp-implementations
+      '((sbcl ("sbcl") :coding-system utf-8-unix)
+        (qlot ("qlot" "exec" "sbcl") :coding-system utf-8-unix)))
+(setq slime-lisp-implementations
+      '((sbcl ("sbcl") :coding-system utf-8-unix)
+        (qlot ("qlot" "exec" "sbcl") :coding-system utf-8-unix)))

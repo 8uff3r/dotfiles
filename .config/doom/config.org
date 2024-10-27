@@ -883,3 +883,13 @@ Some minimal org mode tweaks: org-superstar gives our headings (h1, h2, h3...) a
     :args '("--stdin")))
 
 #+end_src
+
+* Sly
+#+begin_src emacs-lisp :tangle yes
+(setq sly-lisp-implementations
+      '((sbcl ("sbcl") :coding-system utf-8-unix)
+        (qlot ("qlot" "exec" "sbcl") :coding-system utf-8-unix)))
+(setq slime-lisp-implementations
+      '((sbcl ("sbcl") :coding-system utf-8-unix)
+        (qlot ("qlot" "exec" "sbcl") :coding-system utf-8-unix)))
+#+end_src
