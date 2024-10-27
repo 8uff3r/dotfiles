@@ -67,10 +67,42 @@ return {
           },
         },
         rust_analyzer = {},
-        -- tsserver = {},
-        intelephense = {},
+        -- intelephense = {},
         -- phpactor = {},
         -- csharp_ls = {},
+        ts_ls = {
+          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+          init_options = {
+            plugins = {
+              {
+                name = "@vue/typescript-plugin",
+                location = "/home/rylan/.local/share/pnpm/global/5/node_modules/@vue/language-server/",
+                languages = { "vue" },
+              },
+            },
+          },
+        },
+        volar = {
+          filetypes = { "vue" },
+          init_options = {
+            vue = {
+              server = { hybridMode = false },
+            },
+          },
+          settings = {
+            vue = {
+              autoInsert = {
+                bracketSpacing = true,
+                dotValue = true,
+              },
+              inlayHints = {
+                inlineHandlerLeading = true,
+                missingProps = true,
+                optionsWrapper = true,
+              },
+            },
+          },
+        },
         lua_ls = {
           autostart = false,
         },
