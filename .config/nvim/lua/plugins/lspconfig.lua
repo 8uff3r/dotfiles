@@ -107,7 +107,32 @@ return {
           autostart = false,
         },
       },
-      setup = {},
+      setup = {
+
+        ["scheme_ls"] = function(server, opts)
+          return {
+            filetypes = { "scheme" },
+            cmd = {
+              "/nix/store/755sx7hgvb341xgziya94wbbpxgbx3bj-scheme-langserver-1.2.1/bin/scheme-langserver",
+              "~/.var/log/scheme-langserver.log",
+              "enable",
+              "disable",
+            }, -- Command to start the server
+            name = "scheme-langserver",
+            root_dir = require("lspconfig").util.root_pattern(".git", ".gitignore", "AKKU.manifest"), -- Define how to find the root directory
+            init_options = {},
+            on_attach = function(client, bufnr)
+              -- Set up key mappings once the server attaches to the buffer
+              local opts = { noremap = true, silent = true }
+              vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+              vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+            end,
+            settings = {
+              myCustomSetting = true, -- Add any server-specific settings
+            },
+          }
+        end,
+      },
 
       -- Specify * to use this function as a fallback for any server
       -- ["*"] = function(server, opts)

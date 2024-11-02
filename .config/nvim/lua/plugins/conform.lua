@@ -2,7 +2,7 @@ return {
   "stevearc/conform.nvim",
   opts = function()
     return {
-      format = {
+      default_format_opts = {
         -- These options will be passed to conform.format()
         async = false,
         timeout_ms = 10500,
@@ -10,10 +10,12 @@ return {
       },
       -- Map of filetype to formatters
       formatters_by_ft = {
+        scheme = { "schemat" },
         lua = { "stylua" },
         -- Conform will run multiple formatters sequentially
         python = { "isort", "black" },
         -- Use a sub-list to run only the first available formatter
+        clojure = { "cljfmt" },
         javascript = { { "prettierd", "prettier", "dprint" } },
         html = { { "prettierd", "prettier" } },
         typescript = { { "prettierd", "prettier", "dprint" } },
@@ -27,12 +29,23 @@ return {
         css = { { "prettierd", "prettier" } },
         scss = { { "prettierd", "prettier" } },
         dart = { "dart" },
+        ocaml = { "ocamlformat" },
         -- Use the "*" filetype to run formatters on all files.
         -- Note that if you use this, you may want to set lsp_fallback = "always"
         -- (see :help conform.format)
         ["*"] = { "trim_whitespace" },
       },
       formatters = {
+        cljfmt = {
+          command = "cljfmt",
+          args = { "fix", "$FILENAME" },
+          stdin = false,
+        },
+        schemat = {
+          command = "/home/rylan/.cargo/bin/schemat",
+          args = { "$FILENAME" },
+          stdin = false,
+        },
         dart = {
           command = "/home/rylan/.flutter/bin/dart",
           args = { "format", "$FILENAME" },

@@ -29,3 +29,12 @@ vim.api.nvim_create_autocmd("DirChanged", {
   pattern = { "*" },
   command = [[call chansend(v:stderr, printf("\033]7;file://%s\033\\", v:event.cwd))]],
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "lisp",
+  callback = function(args)
+    local res = vim.fn.jobstart("sbcl --eval '(ql:quickload \"alive-lsp\")' --eval '(alive/server::start :port 8006)'")
+    os.execute("sleep 6")
+    vim.lsp.start({ name = "alive-lsp", cmd = vim.lsp.rpc.connect("127.0.0.1", 8006) })
+  end,
+})

@@ -131,5 +131,17 @@
 (package! centaur-tabs)
 (package! multiple-cursors)
 (package! ob-typescript)
+(package! gambit :recipe
+  (:host github
+   :repo "gambit/gambit"
+   :files ("misc/gambit.el")
+   :branch "master"))
+
+(package! gerbil-mode :recipe
+  (:host github
+   :repo "mighty-gerbils/gerbil"
+   :files ("etc/gerbil-mode.el")
+   :branch "master"))
+(package! evil-cleverparens)
 (provide 'packages)
 ;;; packages.el ends here

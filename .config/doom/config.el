@@ -13,10 +13,25 @@
 
 (setq org-directory "~/org/")
 
-;(set-popup-rules!
-;'(("^ \\*" :slot -1)
-;  ("\\*Org Agenda\\*")
-;  ("\\*Equake*" :quit t)))
+;; (set-popup-rules!
+;; '(("^ \\*" :slot -1)
+;;  ("\\*Org Agenda\\*")
+;;  ("\\*Equake*" :quit t)))
+;; (set-popup-rule! "^\\*Geiser" :ignore t :ttl 'nil :quit 'nil)
+(after! geiser
+  (set-popup-rules!
+   '(("^\\*Geiser"
+      :width 100
+      :quit nil
+      :select 't
+      :ttl nil))))
+(after! sly
+  (set-popup-rules!
+   '(("^\\*sly-mrepl"
+      :width 100
+      :quit nil
+      :select 't
+      :ttl nil))))
 (custom-set-faces
  `(mode-line ((t (:background ,"#1C1B21")))))
 ;(+global-word-wrap-mode)
@@ -130,13 +145,16 @@
  :ne "C-p" #'evil-previous-visual-line
  :i "C-a" #'move-beginning-of-line
  :i "C-e" #'end-of-line
- :nm "H" #'evil-window-left
- :nm "L" #'evil-window-right
- :nm "C-l" #'centaur-tabs-forward
- :nm "C-h" #'centaur-tabs-backward
+ :nm "C-h" #'evil-window-left
+ :nm "C-l" #'evil-window-right
+ :nm "C-j" #'evil-window-down
+ :nm "C-k" #'evil-window-up
+ :nm "L" #'centaur-tabs-forward
+ :nm "H" #'centaur-tabs-backward
  :map Info-mode-map
  :ne "k" #'Info-next-preorder
- :ne "j" #'Info-last-preorder)
+ :ne "j"
+ #'Info-last-preorder)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
 ;; (global-set-key (kbd "s-<escape>") (cmd! (shell-command "qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity 24552918-fa9b-44e9-b837-13bf57f0be40" nil nil)))
@@ -600,8 +618,22 @@
   :hook ((typescript-ts-mode . rainbow-delimiters-mode)))
 
 (setq sly-lisp-implementations
-      '((sbcl ("sbcl") :coding-system utf-8-unix)
-        (qlot ("qlot" "exec" "sbcl") :coding-system utf-8-unix)))
+      '((qlot ("qlot" "exec" "sbcl") :coding-system utf-8-unix)
+        (sbcl ("sbcl") :coding-system utf-8-unix)))
 (setq slime-lisp-implementations
       '((sbcl ("sbcl") :coding-system utf-8-unix)
-        (qlot ("qlot" "exec" "sbcl") :coding-system utf-8-unix)))
+        (qlot ("/home/rylan/.qlot/bin/qlot" "exec" "sbcl") :coding-system utf-8-unix)))
+
+(defun gerbil-setup-buffers ()
+    "Change current buffer mode to gerbil-mode and start a REPL"
+    (interactive)
+    (gerbil-mode)
+    (split-window-right)
+    (shrink-window-horizontally 2)
+    (let ((buf (buffer-name)))
+      (other-window 1)
+      (run-scheme "gxi")
+      (switch-to-buffer-other-window "*scheme*" nil)
+      (switch-to-buffer buf)))
+
+  (global-set-key (kbd "C-c C-g") 'gerbil-setup-buffers)

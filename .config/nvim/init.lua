@@ -1,6 +1,7 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 require("config.options")
+require("config.autocmds")
 require("utils")
 -- Set to false to disable.
 vim.g.lazygit_config = false
@@ -27,16 +28,34 @@ vim.filetype.add({
     [".*%.blade%.php"] = "blade",
   },
 })
--- function _G.set_terminal_keymaps()
---   local opts = { buffer = 0 }
---   vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
---   vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
---   vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
---   vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
---   vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
---   vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
---   vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
+-- local lspconfig = require("lspconfig")
+-- local configs = require("lspconfig.configs")
+--
+-- if not configs.gambit_scheme_lsp then
+--   configs.gambit_scheme_lsp = {
+--     default_config = {
+--       filetypes = { "scheme" },
+--       cmd = {
+--         "/home/rylan/.gambit_userlib/codeberg.org/rgherdt/scheme-lsp-server/@/gambit/gambit-lsp-server",
+--       },
+--       name = "gambit-lsp-server",
+--       root_dir = require("lspconfig").util.root_pattern(".git", ".gitignore", "gerbil.pkg"),
+--       init_options = {},
+--     },
+--   }
 -- end
-
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
--- vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+-- lspconfig.gambit_scheme_lsp.setup({})
+vim.filetype.add({
+  extension = {
+    re = "reason",
+  },
+})
+local list = require("nvim-treesitter.parsers").get_parser_configs()
+list.reason = {
+  install_info = {
+    url = "https://github.com/reasonml-editor/tree-sitter-reason",
+    files = { "src/parser.c", "src/scanner.c" },
+    branch = "master",
+  },
+}
+vim.treesitter.language.add("reason", { filetype = "reason" })

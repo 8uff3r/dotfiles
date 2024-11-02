@@ -162,7 +162,7 @@
  ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
  ;;(rust +lsp +tree-sitter)   ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
  ;;scala             ; java, but good
- ;; (scheme +guile +chez +chicken)            ; a fully conniving family of lisps
+ (scheme)            ; a fully conniving family of lisps
  (sh +lsp)                         ; she sells {ba,z,fi}sh shells on the C xor
  ;;sml
  ;;solidity          ; do you need a blockchain? No.
