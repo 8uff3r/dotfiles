@@ -20,7 +20,6 @@ if status is-interactive
   alias ffmpeg='ffmpeg -hide_banner'
   alias ffprobe='ffprobe -hide_banner'
   alias yaye='yay --editmenu --mflags --skipinteg'
-  alias npm='pnpm'
   alias gitc1='git clone --depth 1'
   alias dolphinr='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch dolphin &>/dev/null &'
   alias systemsettingsr='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch systemsettings &>/dev/null &'

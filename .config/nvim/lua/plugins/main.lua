@@ -92,12 +92,4 @@ return {
       bg = nil,
     },
   },
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    opts = {
-      file_types = { "markdown", "Avante" },
-    },
-    ft = { "markdown", "Avante" },
-  },
 }
---0W"byedt'va'gsa(0iconst "bpa=j

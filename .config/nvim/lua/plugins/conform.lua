@@ -1,6 +1,7 @@
 return {
   "stevearc/conform.nvim",
   opts = function()
+    local prettier = { "prettierd", "prettier", stop_after_first = true }
     return {
       default_format_opts = {
         -- These options will be passed to conform.format()
@@ -16,19 +17,20 @@ return {
         python = { "isort", "black" },
         -- Use a sub-list to run only the first available formatter
         clojure = { "cljfmt" },
-        javascript = { { "prettierd", "prettier", "dprint" } },
-        html = { { "prettierd", "prettier" } },
-        typescript = { { "prettierd", "prettier", "dprint" } },
-        typescriptreact = { { "prettierd", "prettier", "dprint" } },
-        jsx = { { "prettierd", "prettier", "dprint" } },
-        json = { { "prettierd", "prettier", "dprint" } },
-        vue = { { "prettierd", "prettier" } },
-        php = { { "prettierd", "prettier" } },
-        svelte = { { "prettierd", "prettier" } },
-        yaml = { { "prettierd", "prettier" } },
-        css = { { "prettierd", "prettier" } },
-        scss = { { "prettierd", "prettier" } },
+        javascript = prettier,
+        html = prettier,
+        typescript = { "biome", "prettier", "prettierd", stop_after_first = true },
+        typescriptreact = prettier,
+        jsx = prettier,
+        json = prettier,
+        vue = prettier,
+        php = prettier,
+        svelte = prettier,
+        yaml = prettier,
+        css = prettier,
+        scss = prettier,
         dart = { "dart" },
+        go = { "gofmt" },
         ocaml = { "ocamlformat" },
         -- Use the "*" filetype to run formatters on all files.
         -- Note that if you use this, you may want to set lsp_fallback = "always"
@@ -36,6 +38,9 @@ return {
         ["*"] = { "trim_whitespace" },
       },
       formatters = {
+        biome = {
+          require_cwd = true,
+        },
         cljfmt = {
           command = "cljfmt",
           args = { "fix", "$FILENAME" },
