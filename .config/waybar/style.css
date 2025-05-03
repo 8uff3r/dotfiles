@@ -102,24 +102,24 @@ window#waybar.hidden {
   color: #e5e5e5;
   /* color: #bf616a; */
   border-radius: 20px;
-  background-color: #1e1e1e;
+  background-color: #0D1017;
 }
 
 #window,
 #workspaces {
   border-radius: 20px;
   padding: 0px 10px;
-  background-color: #1e1e1e;
+  background-color: #0D1017;
 }
 
 #cpu {
   color: #fb958b;
-  background-color: #1e1e1e;
+  background-color: #0D1017;
 }
 
 #memory {
   color: #ebcb8b;
-  background-color: #1e1e1e;
+  background-color: #0D1017;
 }
 
 #custom-power-menu {

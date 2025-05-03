@@ -32,12 +32,19 @@ return {
         dart = { "dart" },
         go = { "gofmt" },
         ocaml = { "ocamlformat" },
+        rust = { "leptosfmt" },
+        atd = { "ocamlformat_for_atd" },
         -- Use the "*" filetype to run formatters on all files.
         -- Note that if you use this, you may want to set lsp_fallback = "always"
         -- (see :help conform.format)
         ["*"] = { "trim_whitespace" },
       },
       formatters = {
+        leptosfmt = {
+          command = "leptosfmt",
+          args = { "--stdin", "--rustfmt" },
+          stdin = true,
+        },
         biome = {
           require_cwd = true,
         },
@@ -46,13 +53,18 @@ return {
           args = { "fix", "$FILENAME" },
           stdin = false,
         },
+        ocamlformat_for_atd = {
+          command = "ocamlformat",
+          args = { "--enable-outside-detected-project", "--intf", "-" },
+          stdin = true,
+        },
         schemat = {
           command = "/home/rylan/.cargo/bin/schemat",
           args = { "$FILENAME" },
           stdin = false,
         },
         dart = {
-          command = "/home/rylan/.flutter/bin/dart",
+          command = "/home/rylan/.flutter_sdk/bin/dart",
           args = { "format", "$FILENAME" },
           stdin = false,
         },

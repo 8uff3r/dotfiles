@@ -1,3 +1,10 @@
+[Activities][LastVirtualDesktop]
+9f7d6ba8-1810-4680-822e-928e6cd8c448=41a0ec19-5206-4eb7-a787-82dcaf78a63d
+f0ad716f-af23-42ae-b8b8-c861c26162fa=41a0ec19-5206-4eb7-a787-82dcaf78a63d
+
+[Compositing]
+AllowTearing=false
+
 [Desktops]
 Id_1=41a0ec19-5206-4eb7-a787-82dcaf78a63d
 Id_2=fdf1eb5e-b063-455b-b810-a0652b6eebad
@@ -32,8 +39,14 @@ Mode=Constant
 [Plugins]
 cubeEnabled=true
 desktopchangeosdEnabled=true
+glideEnabled=true
+karouselEnabled=true
+krohnkiteEnabled=false
+kwin4_effect_geometry_changeEnabled=true
 kwin4_effect_shapecornersEnabled=true
-poloniumEnabled=true
+luisbocanegra.windowActivitySwitcher.kwinscriptEnabled=true
+poloniumEnabled=false
+scaleEnabled=false
 
 [PrimaryOutline]
 ActiveOutlineUseCustom=false
@@ -44,6 +57,35 @@ InactiveOutlineThickness=2
 InactiveOutlineUseCustom=false
 InactiveOutlineUsePalette=true
 OutlineThickness=2
+
+[Script-karousel]
+gapsInnerHorizontal=12
+gapsInnerVertical=12
+reMaximize=true
+untileOnDrag=false
+windowRules=[\n    {\n        "class": "(org\\\\.kde\\\\.)?plasmashell",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?polkit-kde-authentication-agent-1",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kded6",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kcalc",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kfind",\n        "tile": true\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kruler",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?krunner",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?yakuake",\n        "tile": false\n    },\n    {\n        "class": "Windscribe",\n        "tile": false\n    },\n    {\n        "class": "steam",\n        "caption": "Steam Big Picture Mode",\n        "tile": false\n    },\n    {\n        "class": "zoom",\n        "caption": "Zoom Cloud Meetings|zoom|zoom <2>",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "splash",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "Unstash Changes|Paths Affected by stash@.*",\n        "tile": true\n    }\n]
+
+[Script-krohnkite]
+dockHEdgeGap=10
+dockHGap=10
+dockVEdgeGap=10
+dockVGap=10
+enableColumnsLayout=false
+enableFloatingLayout=true
+enableMonocleLayout=false
+enableSpreadLayout=false
+enableStairLayout=false
+enableThreeColumnLayout=false
+enableTileLayout=false
+floatUtility=false
+floatedWindowsLayer=2
+ignoreActivity=9f7d6ba8-1810-4680-822e-928e6cd8c448
+layoutPerDesktop=false
+screenGapBetween=10
+screenGapBottom=10
+screenGapLeft=10
+screenGapRight=10
+screenGapTop=10
 
 [Script-polonium]
 FilterCaption=Oblivion Desktop
@@ -57,8 +99,12 @@ SecondOutlineThickness=0
 [Shadow]
 ActiveShadowAlpha=250
 
+[SubSession: 1d720bef-5765-47a0-810a-8e9e5fd339ef]
+active=-1
+count=0
+
 [Tiling]
-padding=8
+padding=4
 
 [Tiling][1f792ed9-eba5-5d14-9e01-6e39fa9d8829]
 tiles={"layoutDirection":"horizontal","tiles":[]}
@@ -66,10 +112,18 @@ tiles={"layoutDirection":"horizontal","tiles":[]}
 [Tiling][4c943ce7-7233-51dc-a576-44a70f9cf5ae]
 tiles={"layoutDirection":"floating","tiles":[]}
 
+[Tiling][8edf85ef-226c-5d29-b452-5bddb37215b7]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][aada3d58-61df-546b-a6e3-80c3890c4649]
+tiles={"layoutDirection":"horizontal","tiles":[]}
+
 [Windows]
+BorderSnapZone=0
 FocusPolicy=FocusFollowsMouse
 NextFocusPrefersMouse=true
 RollOverDesktops=true
+WindowSnapZone=0
 
 [Xwayland]
 Scale=1
@@ -77,6 +131,9 @@ Scale=1
 [org.kde.kdecoration2]
 BorderSize=Normal
 BorderSizeAuto=false
+ButtonsOnLeft=M
+library=org.kde.klassy
+theme=Klassy
 
 [ًRound-Corners]
 InactiveShadowSize=1

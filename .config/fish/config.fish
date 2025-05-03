@@ -28,12 +28,13 @@ if status is-interactive
   alias qr='qrencode -m 2 -t utf8'
   alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+  alias pkexec='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY'
   # Fedora
   alias dnfi='sudo dnf install'
   alias dnfr='sudo dnf remove'
   alias dnfu='sudo dnf update'
   alias dnfs='dnf search'
-  alias sp='export HTTP_PROXY=http://127.0.0.1:7890 && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY'
+  alias sp='export HTTP_PROXY=http://127.0.0.1:10808 && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY'
 
   function csp
     export HTTP_PROXY=$argv && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY
@@ -57,3 +58,6 @@ source ~/.config/.env
 # This section can be safely removed at any time if needed.
 test -r '/home/rylan/.opam/opam-init/init.fish' && source '/home/rylan/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/rylan/.lmstudio/bin

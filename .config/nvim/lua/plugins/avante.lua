@@ -1,15 +1,18 @@
 return {
   "yetone/avante.nvim",
-  enabled = false,
+  enabled = true,
   event = "VeryLazy",
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
     provider = "openai",
-    auto_suggestions_provider = "gpt3",
+    auto_suggestions_provider = "openai",
     openai = {
       endpoint = "https://api.avalai.ir/v1",
-      model = "gpt-4o-mini",
+      model = "gemini-2.0-flash",
+      timeout = 30000, -- Timeout in milliseconds
+      temperature = 0,
+      max_tokens = 4096,
     },
     vendors = {
       gpt3 = {
@@ -57,29 +60,6 @@ return {
               messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
               max_tokens = 2048,
               stream = true,
-            },
-          }
-        end,
-        parse_response_data = function(data_stream, event_state, opts)
-          require("avante.providers").openai.parse_response(data_stream, event_state, opts)
-        end,
-      },
-      gpt4all = {
-        ["local"] = true,
-        endpoint = "127.0.0.1:4891/v1",
-        model = "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
-        parse_curl_args = function(opts, code_opts)
-          return {
-            url = opts.endpoint .. "/chat/completions",
-            headers = {
-              ["Accept"] = "application/json",
-              ["Content-Type"] = "application/json",
-            },
-            body = {
-              model = opts.model,
-              messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
-              max_tokens = 8192,
-              stream = false,
             },
           }
         end,

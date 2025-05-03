@@ -43,6 +43,20 @@ return {
       },
       ---@type lspconfig.options
       servers = {
+        -- tailwindcss = {
+        --   filetypes = { "rust" },
+        --   settings = {
+        --     tailwindCSS = {
+        --       experimental = {
+        --         classRegex = { 'class: "([^"]*)",' },
+        --         -- classRegex = { { "class: ([^,]*),", "'([^']*)'" }, { "class: ([^,]*),", '"([^"]*)"' } },
+        --       },
+        --       includeLanguages = {
+        --         rust = "html",
+        --       },
+        --     },
+        --   },
+        -- },
         gopls = {
           settings = {
             gopls = {
@@ -67,27 +81,38 @@ return {
             },
           },
         },
-        rust_analyzer = {},
-        -- intelephense = {},
-        -- phpactor = {},
-        -- csharp_ls = {},
-        ts_ls = {
-          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-          init_options = {
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = "/home/rylan/.local/share/pnpm/global/5/node_modules/@vue/language-server/",
-                languages = { "vue" },
+        teal_ls = {
+          cmd = { "/usr/bin/teal-language-server" },
+          filetypes = { "teal" },
+          root_dir = require("lspconfig.util").root_pattern("tlconfig.lua", ".git"),
+        },
+        ocamllsp = {
+          cmd = { "/home/rylan/.opam/default/bin/ocamllsp" },
+          filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
+        },
+        rust_analyzer = {
+          settings = {
+            ["rust-analyzer"] = {
+              rustfmt = {
+                overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
+              },
+              procMacro = {
+                ignored = {
+                  leptos_macro = {
+                    "component",
+                    "server",
+                  },
+                },
               },
             },
           },
         },
         volar = {
-          filetypes = { "vue" },
+          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+          -- filetypes = { "vue" },
           init_options = {
             vue = {
-              server = { hybridMode = false },
+              hybridMode = false,
             },
           },
           settings = {
@@ -109,7 +134,6 @@ return {
         },
       },
       setup = {
-
         ["scheme_ls"] = function(server, opts)
           return {
             filetypes = { "scheme" },
@@ -139,5 +163,15 @@ return {
       -- ["*"] = function(server, opts)
       -- end,
     },
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    enabled = true,
+    config = function()
+      return {
+        ensure_installed = { "lua_ls", "rust_analyzer" },
+        automatic_installation = false,
+      }
+    end,
   },
 }

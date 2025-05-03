@@ -48,6 +48,7 @@ vim.filetype.add({
 vim.filetype.add({
   extension = {
     re = "reason",
+    atd = "atd",
   },
 })
 local list = require("nvim-treesitter.parsers").get_parser_configs()
@@ -58,4 +59,9 @@ list.reason = {
     branch = "master",
   },
 }
+list.atd = list.ocaml
 vim.treesitter.language.add("reason", { filetype = "reason" })
+vim.treesitter.language.add("ocaml", { filetype = "atd" })
+local lspconfig = require("lspconfig")
+
+lspconfig.teal_ls.setup({})

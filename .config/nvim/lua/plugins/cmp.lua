@@ -6,6 +6,16 @@ return {
         use_nvim_cmp_as_default = true,
       },
       completion = {
+        -- keyword = {
+        --   range = "full",
+        -- },
+        trigger = {
+          show_on_keyword = true,
+          prefetch_on_insert = true,
+          show_on_trigger_character = true,
+          show_on_insert_on_trigger_character = true,
+          show_on_accept_on_trigger_character = true,
+        },
         menu = {
           border = {
             { "󱐋", "WarningMsg" },
