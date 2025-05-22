@@ -2,7 +2,7 @@ if status is-interactive
   # Commands to run in interactive sessions can go here
   starship init fish | source
   alias c='clear'
-  alias podlp='yt-dlp -o "~/.porn/%(title)s[%(id)s].%(ext)s" '
+  alias podlp='yt-dlp -o "~/.porn/%(title)s[%(webpage_url)s].%(ext)s" '
   alias podl='youtube-dl -o "~/.porn/%(channel)s/%(title)s[%(id)s].%(ext)s"'
   alias mvdl='youtube-dl -o "~/Videos/YT/MVs/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'
   alias mvdlp='yt-dlp -o "~/Videos/YT/MVs/%(title)s.%(ext)s" --sub-lang en --sub-format srt --write-sub'

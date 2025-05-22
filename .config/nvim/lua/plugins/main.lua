@@ -2,7 +2,7 @@ return {
   { "Shatur/neovim-session-manager" },
   {
     "aserowy/tmux.nvim",
-    enabled = true,
+    enabled = false,
     opts = {
       enable_default_keybindings = false,
     },

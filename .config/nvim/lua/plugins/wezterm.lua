@@ -33,7 +33,7 @@ end
 
 return {
   "willothy/wezterm.nvim",
-  enabled = false,
+  enabled = true,
   keys = {
     -- {
     --   "<A-CR>",

@@ -81,11 +81,6 @@ return {
             },
           },
         },
-        teal_ls = {
-          cmd = { "/usr/bin/teal-language-server" },
-          filetypes = { "teal" },
-          root_dir = require("lspconfig.util").root_pattern("tlconfig.lua", ".git"),
-        },
         ocamllsp = {
           cmd = { "/home/rylan/.opam/default/bin/ocamllsp" },
           filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
@@ -164,14 +159,6 @@ return {
       -- end,
     },
   },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    enabled = true,
-    config = function()
-      return {
-        ensure_installed = { "lua_ls", "rust_analyzer" },
-        automatic_installation = false,
-      }
-    end,
-  },
+  { "mason-org/mason.nvim", version = "^1.0.0" },
+  { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
 }

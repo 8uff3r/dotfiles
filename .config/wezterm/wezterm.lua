@@ -91,6 +91,13 @@ return {
 			mods = "CTRL|SHIFT",
 			action = act.CopyTo("Clipboard"),
 		},
+		{ key = "h", mods = "ALT", action = act.ActivateTabRelative(-1) },
+		{ key = "l", mods = "ALT", action = act.ActivateTabRelative(1) },
+		{
+			key = "t",
+			mods = "ALT",
+			action = act.SpawnTab("CurrentPaneDomain"),
+		},
 		{
 			key = "v",
 			mods = "CTRL|SHIFT",
