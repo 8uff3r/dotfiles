@@ -406,7 +406,7 @@ switch to next activity=Meta+Tab,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=F12,,Toggle do not disturb
 
-[services][foot.desktop]
+[services][net.local.wezterm.desktop]
 _launch=Meta+Return
 
 [services][org.kde.krunner.desktop]

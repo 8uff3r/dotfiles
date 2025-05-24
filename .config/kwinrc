@@ -1,6 +1,6 @@
 [Activities][LastVirtualDesktop]
-9f7d6ba8-1810-4680-822e-928e6cd8c448=fdf1eb5e-b063-455b-b810-a0652b6eebad
-f0ad716f-af23-42ae-b8b8-c861c26162fa=fdf1eb5e-b063-455b-b810-a0652b6eebad
+9f7d6ba8-1810-4680-822e-928e6cd8c448=41a0ec19-5206-4eb7-a787-82dcaf78a63d
+f0ad716f-af23-42ae-b8b8-c861c26162fa=41a0ec19-5206-4eb7-a787-82dcaf78a63d
 
 [Compositing]
 AllowTearing=false
@@ -64,7 +64,7 @@ gapsInnerHorizontal=12
 gapsInnerVertical=12
 reMaximize=true
 tiledKeepBelow=false
-windowRules=[\n    {\n        "class": "(org\\\\.kde\\\\.)?plasmashell",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?polkit-kde-authentication-agent-1",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kded6",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kcalc",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kfind",\n        "tile": true\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kruler",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?krunner",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?yakuake",\n        "tile": false\n    },\n    {\n        "class": "Windscribe",\n        "tile": false\n    },\n    {\n        "class": "main.exe",\n        "tile": false\n    },\n    {\n        "class": "steam",\n        "caption": "Steam Big Picture Mode",\n        "tile": false\n    },\n    {\n        "class": "zoom",\n        "caption": "Zoom Cloud Meetings|zoom|zoom <2>",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "splash",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "Unstash Changes|Paths Affected by stash@.*",\n        "tile": true\n    }\n]
+windowRules=[\n    {\n        "class": "(org\\\\.kde\\\\.)?plasmashell",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?polkit-kde-authentication-agent-1",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kded6",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kcalc",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kfind",\n        "tile": true\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kruler",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?krunner",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?yakuake",\n        "tile": false\n    },\n    {\n        "class": "Windscribe",\n        "tile": false\n    },\n    {\n        "class": "main.exe",\n        "tile": false\n    },\n    {\n        "class": "AmneziaVPN",\n        "tile": false\n    },\n    {\n        "class": "steam",\n        "caption": "Steam Big Picture Mode",\n        "tile": false\n    },\n    {\n        "class": "zoom",\n        "caption": "Zoom Cloud Meetings|zoom|zoom <2>",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "splash",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "Unstash Changes|Paths Affected by stash@.*",\n        "tile": true\n    }\n]
 
 [Script-krohnkite]
 dockHEdgeGap=10

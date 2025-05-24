@@ -7,6 +7,7 @@ require("utils")
 vim.g.lazygit_config = false
 vim.cmd([[
 set mousemodel=extend
+set noarabicshape
 ]])
 
 vim.o.guifont = "FiraCode Nerd Font:h15"

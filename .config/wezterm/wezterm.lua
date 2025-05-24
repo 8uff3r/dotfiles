@@ -26,8 +26,35 @@ function nvim_pane_rev(direction)
 
 	return M
 end
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+	options = {
+		theme = "ayu",
+	},
+	sections = {
+		tabline_a = { "mode" },
+		tabline_b = { "workspace" },
+		tabline_c = { " " },
+		tab_active = {
+			"index",
+			{ "parent", padding = 0 },
+			"/",
+			{ "cwd", padding = { left = 0, right = 1 } },
+			{ "zoomed", padding = 0 },
+		},
+		tab_inactive = {
+			"index",
+			{ "process", padding = { left = 0, right = 1 } },
+			{ "cwd", padding = { left = 0, right = 1 } },
+		},
+		tabline_x = {},
+		tabline_y = { "battery" },
+		tabline_z = { "domain" },
+	},
+})
 
-return {
+local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+local config = {
 	bidi_enabled = true,
 	bidi_direction = "AutoLeftToRight",
 	disable_default_key_bindings = true,
@@ -37,8 +64,8 @@ return {
 
 	font = wezterm.font_with_fallback({
 		{ family = "Jetbrains Mono Nerd Font", weight = 480 },
-		{ family = "Symbols Nerd Font Mono" },
 		{ family = "Vazir Code", weight = "DemiBold" },
+		{ family = "Symbols Nerd Font Mono" },
 	}),
 	font_size = 14,
 	font_rules = {
@@ -51,7 +78,9 @@ return {
 			}),
 		},
 	},
-	hide_tab_bar_if_only_one_tab = true,
+	hide_tab_bar_if_only_one_tab = false,
+	tab_bar_at_bottom = false,
+	use_fancy_tab_bar = false,
 	window_padding = {
 		left = 0,
 		right = 0,
@@ -103,5 +132,118 @@ return {
 			mods = "CTRL|SHIFT",
 			action = act.PasteFrom("Clipboard"),
 		},
+		{
+			key = "c",
+			mods = "ALT",
+			action = act.ActivateCopyMode,
+		},
+		{
+			key = "q",
+			mods = "ALT",
+			action = act.QuickSelect,
+		},
+		{
+			key = "f",
+			mods = "ALT",
+			action = act.Search("CurrentSelectionOrEmptyString"),
+		},
+		-- Workspace name change
+		{
+			key = "x",
+			mods = "ALT",
+			action = act.PromptInputLine({
+				description = wezterm.format({
+					{ Attribute = { Intensity = "Bold" } },
+					{ Foreground = { AnsiColor = "Fuchsia" } },
+					{ Text = "Enter name for new workspace" },
+				}),
+				action = wezterm.action_callback(function(window, pane, line)
+					-- line will be `nil` if they hit escape without entering anything
+					-- An empty string if they just hit enter
+					-- Or the actual line of text they wrote
+					if line then
+						window:perform_action(
+							act.SwitchToWorkspace({
+								name = line,
+							}),
+							pane
+						)
+					end
+				end),
+			}),
+		},
+		{
+			key = "9",
+			mods = "ALT",
+			action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
+		},
+		{ key = "v", mods = "ALT", action = act.SwitchWorkspaceRelative(1) },
+		{
+			key = "r",
+			mods = "ALT",
+			-- action = wezterm.action_callback(function(win, pane)
+			-- 	wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), "something different")
+			-- end),
+			action = act.PromptInputLine({
+				description = wezterm.format({
+					{ Attribute = { Intensity = "Bold" } },
+					{ Foreground = { AnsiColor = "Fuchsia" } },
+					{ Text = "Change the name of current workspace" },
+				}),
+				action = wezterm.action_callback(function(window, pane, line)
+					-- line will be `nil` if they hit escape without entering anything
+					-- An empty string if they just hit enter
+					-- Or the actual line of text they wrote
+					if line then
+						wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+					end
+				end),
+			}),
+		},
+
+		-- Resurrect
+		{
+			key = "s",
+			mods = "ALT",
+			action = wezterm.action_callback(function(win, pane)
+				resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
+				resurrect.window_state.save_window_action()
+			end),
+		},
+		{
+			key = "o",
+			mods = "ALT",
+			action = wezterm.action_callback(function(win, pane)
+				resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
+					local type = string.match(id, "^([^/]+)") -- match before '/'
+					id = string.match(id, "([^/]+)$") -- match after '/'
+					id = string.match(id, "(.+)%..+$") -- remove file extention
+					local opts = {
+						relative = true,
+						restore_text = true,
+						pane = pane,
+						win = win,
+						close_open_panes = true,
+						close_open_tabs = true,
+						spawn_in_workspace = true,
+						on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+					}
+					if type == "workspace" then
+						local state = resurrect.state_manager.load_state(id, "workspace")
+						resurrect.workspace_state.restore_workspace(state, opts)
+						wezterm.mux.set_active_workspace(id)
+					elseif type == "window" then
+						local state = resurrect.state_manager.load_state(id, "window")
+						resurrect.window_state.restore_window(pane:window(), state, opts)
+					elseif type == "tab" then
+						local state = resurrect.state_manager.load_state(id, "tab")
+						resurrect.tab_state.restore_tab(pane:tab(), state, opts)
+					end
+				end)
+			end),
+		},
 	},
 }
+tabline.apply_to_config(config)
+
+return config
