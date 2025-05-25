@@ -89,6 +89,13 @@ local config = {
 	},
 	default_prog = { "fish" },
 	term = "wezterm",
+	mouse_bindings = {
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "NONE",
+			action = wezterm.action.Nop,
+		},
+	},
 	keys = {
 		nvim_pane_rev("Down"),
 		nvim_pane_rev("Up"),
