@@ -29,6 +29,9 @@ end
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({
 	options = {
+		section_separators = "",
+		component_separators = "",
+		tab_separators = "",
 		theme = "ayu",
 		theme_overrides = {
 			tab = {
