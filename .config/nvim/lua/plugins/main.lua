@@ -83,16 +83,6 @@ return {
   },
   { "nvimtools/none-ls.nvim", enabled = false },
   {
-    "HampusHauffman/block.nvim",
-    opts = {
-      percent = 1.5,
-      depth = 4,
-      colors = nil,
-      automatic = false,
-      bg = nil,
-    },
-  },
-  {
     "eero-lehtinen/oklch-color-picker.nvim",
     event = "VeryLazy",
     version = "*",

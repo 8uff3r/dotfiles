@@ -68,6 +68,8 @@ local config = {
 	color_scheme = "ayu",
 	enable_wayland = false,
 	warn_about_missing_glyphs = false,
+	window_background_opacity = 0.85,
+	text_background_opacity = 0.85,
 
 	font = wezterm.font_with_fallback({
 		{ family = "Jetbrains Mono", weight = 480 },

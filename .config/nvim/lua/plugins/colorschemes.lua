@@ -19,28 +19,46 @@ return {
     config = function()
       vim.g.ayu_extended_palette = 1
       vim.g.ayu_sign_contrast = 1
-      -- local c = require("customcolors")
       require("ayu").setup({
-        mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
-        -- overrides = c,
+        mirage = false,
         overrides = {
-          Normal = {
-            bg = "#07070D",
-          },
+          Normal = { bg = "None" },
+          NormalFloat = { bg = "none" },
+          ColorColumn = { bg = "None" },
+          SignColumn = { bg = "None" },
+          Folded = { bg = "None" },
+          FoldColumn = { bg = "None" },
+          CursorLine = { bg = "None" },
+          CursorColumn = { bg = "None" },
+          VertSplit = { bg = "None" },
           Pmenu = {
-            bg = "#07070D",
-          },
-          NormalFloat = {
-            bg = "#07070D",
-          },
-          WhichKeyFloat = {
-            bg = "#07070D",
+            bg = "None",
           },
           WhichKeyBorder = {
             fg = "#FFB454",
           },
           LspInlayHint = { fg = "#6E6A86", bg = "#221F2E" },
-        }, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
+          TabLineFill = { bg = "None" },
+        },
+
+        -- overrides = {
+        --   Normal = {
+        --     bg = "#07070D",
+        --   },
+        --   Pmenu = {
+        --     bg = "#07070D",
+        --   },
+        --   NormalFloat = {
+        --     bg = "#07070D",
+        --   },
+        --   WhichKeyFloat = {
+        --     bg = "#07070D",
+        --   },
+        --   WhichKeyBorder = {
+        --     fg = "#FFB454",
+        --   },
+        --   LspInlayHint = { fg = "#6E6A86", bg = "#221F2E" },
+        -- }, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
       })
 
       vim.opt.background = "dark" -- set this to dark or light
