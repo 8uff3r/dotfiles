@@ -30,6 +30,13 @@ local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabl
 tabline.setup({
 	options = {
 		theme = "ayu",
+		theme_overrides = {
+			tab = {
+				inactive = { fg = "#35A3D9" },
+				active = { fg = "#ffffff", bg = "#181825" },
+				inactive_hover = { fg = "#f5c2e7", bg = "#313244" },
+			},
+		},
 	},
 	sections = {
 		tabline_a = { "mode" },
@@ -37,6 +44,7 @@ tabline.setup({
 		tabline_c = { " " },
 		tab_active = {
 			"index",
+			{ "process", padding = { left = 0, right = 1 } },
 			{ "parent", padding = 0 },
 			"/",
 			{ "cwd", padding = { left = 0, right = 1 } },
@@ -44,7 +52,6 @@ tabline.setup({
 		},
 		tab_inactive = {
 			"index",
-			{ "process", padding = { left = 0, right = 1 } },
 			{ "cwd", padding = { left = 0, right = 1 } },
 		},
 		tabline_x = {},
@@ -63,7 +70,7 @@ local config = {
 	warn_about_missing_glyphs = false,
 
 	font = wezterm.font_with_fallback({
-		{ family = "Jetbrains Mono Nerd Font", weight = 480 },
+		{ family = "Jetbrains Mono", weight = 480 },
 		{ family = "Vazir Code", weight = "DemiBold" },
 		{ family = "Symbols Nerd Font Mono" },
 	}),
