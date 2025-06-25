@@ -5,12 +5,19 @@
     "npm": "@ai-sdk/openai-compatible",
       "name": "AvalAI",
       "options": {
-        "baseURL":"https://api.avalai.ir/v1"
+        "baseURL":"https://api.avalai.ir/v1/chat/completions"
       },
       "models": {
-        "gpt-4o-mini": {
+        "gemini-2.0-flash": {
           "name": "Gemini 2.0 flash"
-        }
+        },
+        "claude-3-5-sonnet":{
+        "name": "Claude 3.5 Sonnet"
+      },
+
+        "gpt-4o-mini":{
+        "name": "GPT 4o-mini"
+      }
       }
     }
   }
