@@ -1,4 +1,6 @@
 [Activities][LastVirtualDesktop]
+12700c5b-e74e-49af-b32d-6338421aaa36=fdf1eb5e-b063-455b-b810-a0652b6eebad
+6cdacb10-3abd-49dc-9bae-13e85679621e=fdf1eb5e-b063-455b-b810-a0652b6eebad
 9f7d6ba8-1810-4680-822e-928e6cd8c448=fdf1eb5e-b063-455b-b810-a0652b6eebad
 f0ad716f-af23-42ae-b8b8-c861c26162fa=41a0ec19-5206-4eb7-a787-82dcaf78a63d
 
@@ -107,6 +109,9 @@ count=0
 
 [Tiling]
 padding=4
+
+[Tiling][1f40af89-8bfb-56c1-a340-077032f58bfe]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][1f792ed9-eba5-5d14-9e01-6e39fa9d8829]
 tiles={"layoutDirection":"horizontal","tiles":[]}

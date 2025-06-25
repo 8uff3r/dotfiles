@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "avalai": {
+    "npm": "@ai-sdk/openai-compatible",
+      "name": "AvalAI",
+      "options": {
+        "baseURL":"https://api.avalai.ir/v1"
+      },
+      "models": {
+        "gpt-4o-mini": {
+          "name": "Gemini 2.0 flash"
+        }
+      }
+    }
+  }
+}

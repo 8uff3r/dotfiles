@@ -81,10 +81,6 @@ return {
             },
           },
         },
-        ocamllsp = {
-          cmd = { "/home/rylan/.opam/default/bin/ocamllsp" },
-          filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
-        },
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {

@@ -66,3 +66,5 @@ vim.treesitter.language.add("ocaml", { filetype = "atd" })
 local lspconfig = require("lspconfig")
 
 lspconfig.teal_ls.setup({})
+
+require("zenity_edit")
