@@ -84,6 +84,8 @@ window#waybar.hidden {
 #idle_inhibitor,
 #mpd,
 #bluetooth,
+#custom-storage,
+#custom-brightness,
 #custom-hyprPicker,
 #custom-power-menu,
 #custom-spotify,
@@ -184,6 +186,7 @@ window#waybar.hidden {
 #backlight {
   /* color: #EBCB8B; */
   color: #8fbcbb;
+  background-color: #14141e;
 }
 
 #clock {

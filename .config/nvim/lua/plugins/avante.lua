@@ -5,16 +5,22 @@ return {
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
-    provider = "openai",
+    provider = "gemini",
     auto_suggestions_provider = "openai",
-    openai = {
-      endpoint = "https://api.avalai.ir/v1",
-      model = "gemini-2.0-flash",
-      timeout = 30000, -- Timeout in milliseconds
-      temperature = 0,
-      max_tokens = 4096,
-    },
-    vendors = {
+    providers = {
+      gemini = {
+        model = "gemini-2.0-flash",
+        timeout = 30000, -- Timeout in milliseconds
+      },
+      openai = {
+        endpoint = "https://api.avalai.ir/v1",
+        model = "gemini-2.0-flash",
+        timeout = 30000, -- Timeout in milliseconds
+        extra_request_body = {
+          temperature = 0,
+        },
+        max_tokens = 4096,
+      },
       gpt3 = {
         endpoint = "https://api.avalai.ir/v1",
         model = "gpt-3.5-turbo",

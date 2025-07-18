@@ -32,7 +32,7 @@ return {
         dart = { "dart" },
         go = { "gofmt" },
         ocaml = { "ocamlformat" },
-        rust = { "leptosfmt" },
+        rust = { "rustfmt" },
         atd = { "ocamlformat_for_atd" },
         -- Use the "*" filetype to run formatters on all files.
         -- Note that if you use this, you may want to set lsp_fallback = "always"

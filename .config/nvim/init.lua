@@ -67,4 +67,26 @@ local lspconfig = require("lspconfig")
 
 lspconfig.teal_ls.setup({})
 
-require("zenity_edit")
+local configs = require("nvim-treesitter.configs")
+configs.setup({
+  ensure_installed = { "haxe" }, -- Install the Haxe parser
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    additional_vim_regex_highlighting = false,
+  },
+})
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.haxe = {
+  install_info = {
+    url = "https://github.com/vantreeseba/tree-sitter-haxe",
+    files = { "src/parser.c", "src/scanner.c" },
+    -- optional entries:
+    branch = "main",
+  },
+  filetype = "haxe",
+}
+vim.filetype.add({
+  extension = {
+    hx = "haxe",
+  },
+})
