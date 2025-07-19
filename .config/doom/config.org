@@ -887,18 +887,13 @@ Some minimal org mode tweaks: org-superstar gives our headings (h1, h2, h3...) a
   :custom ((denote-known-keywords '("emacs" "philosophy" "politics" "economics" "CS" "DevOps" "public" "Programming"))))
 #+end_src
 
-* Reformatter
-#+begin_src elisp :tangle no
-(use-package! reformatter
-  :hook
-  '((vue-ts-mode . vue-ts-mode-format-on-save-mode))
+* Apheleia
+#+begin_src elisp :tangle yes
+(use-package! apheleia
   :config
-  (reformatter-define vue-ts-mode-format
-                      :program "/home/rylan/.local/share/pnpm/prettier"
-                      :args '("--parser" "vue"))
-  (reformatter-define vue-ts-mode-tail-format
-    :program "/home/rylan/.cargo/bin/rustywind"
-    :args '("--stdin")))
+  (setf (alist-get 'vue-ts-mode apheleia-mode-alist)
+      '(prettier))
+  )
 
 #+end_src
 

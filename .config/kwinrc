@@ -1,15 +1,14 @@
 [Activities][LastVirtualDesktop]
-12700c5b-e74e-49af-b32d-6338421aaa36=fdf1eb5e-b063-455b-b810-a0652b6eebad
-6cdacb10-3abd-49dc-9bae-13e85679621e=fdf1eb5e-b063-455b-b810-a0652b6eebad
-9f7d6ba8-1810-4680-822e-928e6cd8c448=fdf1eb5e-b063-455b-b810-a0652b6eebad
-f0ad716f-af23-42ae-b8b8-c861c26162fa=41a0ec19-5206-4eb7-a787-82dcaf78a63d
+9f7d6ba8-1810-4680-822e-928e6cd8c448=293d5714-6040-4038-9364-7e824530dc39
+f0ad716f-af23-42ae-b8b8-c861c26162fa=fdf1eb5e-b063-455b-b810-a0652b6eebad
 
 [Compositing]
 AllowTearing=false
 
 [Desktops]
-Id_1=41a0ec19-5206-4eb7-a787-82dcaf78a63d
-Id_2=fdf1eb5e-b063-455b-b810-a0652b6eebad
+Id_1=fdf1eb5e-b063-455b-b810-a0652b6eebad
+Id_2=293d5714-6040-4038-9364-7e824530dc39
+Name_1=Desktop 2
 Number=2
 Rows=1
 
@@ -61,13 +60,14 @@ InactiveOutlineUsePalette=true
 OutlineThickness=2
 
 [Script-karousel]
+cursorFollowsFocus=true
 floatingKeepAbove=true
 gapsInnerHorizontal=12
 gapsInnerVertical=12
 reMaximize=true
 tiledKeepBelow=false
 untileOnDrag=false
-windowRules=[\n    {\n        "class": "(org\\\\.kde\\\\.)?plasmashell",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?polkit-kde-authentication-agent-1",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kded6",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kcalc",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kfind",\n        "tile": true\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kruler",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?krunner",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?yakuake",\n        "tile": false\n    },\n    {\n        "class": "Windscribe",\n        "tile": false\n    },\n    {\n        "class": "main.exe",\n        "tile": false\n    },\n    {\n        "class": "AmneziaVPN",\n        "tile": false\n    },\n    {\n        "class": "steam",\n        "caption": "Steam Big Picture Mode",\n        "tile": false\n    },\n    {\n        "class": "zoom",\n        "caption": "Zoom Cloud Meetings|zoom|zoom <2>",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "splash",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "Unstash Changes|Paths Affected by stash@.*",\n        "tile": true\n    }\n]
+windowRules=[\n    {\n        "class": "(org\\\\.kde\\\\.)?plasmashell",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?polkit-kde-authentication-agent-1",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kded6",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kcalc",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kfind",\n        "tile": true\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kruler",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?krunner",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?yakuake",\n        "tile": false\n    },\n    {\n        "class": "Windscribe",\n        "tile": false\n    },\n    {\n        "class": "main.exe",\n        "tile": false\n    },\n    {\n        "class": "AmneziaVPN",\n        "tile": false\n    },\n    {\n        "class": "steam",\n        "caption": "Steam Big Picture Mode",\n        "tile": false\n    },\n    {\n        "class": "zoom",\n        "caption": "Zoom Cloud Meetings|zoom|zoom <2>",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "splash",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "Unstash Changes|Paths Affected by stash@.*",\n        "tile": true\n    },\n    {\n        "caption": "Picture in picture",\n        "tile": false\n    }\n]
 
 [Script-krohnkite]
 dockHEdgeGap=10
@@ -116,14 +116,35 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][1f792ed9-eba5-5d14-9e01-6e39fa9d8829]
 tiles={"layoutDirection":"horizontal","tiles":[]}
 
+[Tiling][26a4e1b5-f2f3-4e30-8c80-0aa40a836d96][9f9182c7-e6d6-4c6e-8bac-ecab6731c725]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][293d5714-6040-4038-9364-7e824530dc39][]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][293d5714-6040-4038-9364-7e824530dc39][9f9182c7-e6d6-4c6e-8bac-ecab6731c725]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][29d0d1e6-417a-50c6-9039-54209a34aa03]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][4c943ce7-7233-51dc-a576-44a70f9cf5ae]
 tiles={"layoutDirection":"floating","tiles":[]}
 
 [Tiling][8edf85ef-226c-5d29-b452-5bddb37215b7]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][92e842d7-5928-5c43-884a-4912e7cc82ed]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][aada3d58-61df-546b-a6e3-80c3890c4649]
 tiles={"layoutDirection":"horizontal","tiles":[]}
+
+[Tiling][fdf1eb5e-b063-455b-b810-a0652b6eebad][]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][fdf1eb5e-b063-455b-b810-a0652b6eebad][9f9182c7-e6d6-4c6e-8bac-ecab6731c725]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Windows]
 BorderSnapZone=0

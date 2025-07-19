@@ -617,6 +617,12 @@
 (use-package! rainbow-delimiters
   :hook ((typescript-ts-mode . rainbow-delimiters-mode)))
 
+(use-package! apheleia
+  :config
+  (setf (alist-get 'vue-ts-mode apheleia-mode-alist)
+      '(prettier))
+  )
+
 (setq sly-lisp-implementations
       '((qlot ("qlot" "exec" "sbcl") :coding-system utf-8-unix)
         (sbcl ("sbcl") :coding-system utf-8-unix)))
