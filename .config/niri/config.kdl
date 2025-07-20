@@ -8,6 +8,8 @@
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
+workspace "editor"
+workspace "browser"
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar" "-c" "/home/rylan/.config/waybar/config-niri"
@@ -21,6 +23,7 @@ spawn-at-startup "hyprpaper"
 
 environment {
   QT_QPA_PLATFORM "wayland"
+  QT_QPA_PLATFORMTHEME "qt5ct"
   DISPLAY ":1"
 }
 
@@ -39,7 +42,7 @@ input {
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            layout "us,fa"
+            layout "us,ir"
 
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
         }
@@ -133,7 +136,21 @@ input {
 layout {
     // Set gaps around windows in logical pixels.
     gaps 16
-
+    // default-column-display "tabbed"
+  tab-indicator {
+    // off
+    hide-when-single-tab
+    place-within-column
+    gap 5
+    width 6
+    length total-proportion=1.0
+    position "right"
+    gaps-between-tabs 2
+    corner-radius 8
+    active-color "orange"
+    inactive-color "gray"
+    urgent-color "blue"
+  }
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -269,8 +286,8 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
+        left 42
+        right 42
         // top 64
         // bottom 64
     }
@@ -318,16 +335,19 @@ window-rule {
     draw-border-with-background false
 }
 
-workspace "editor"
-workspace "browser"
 window-rule {
     match app-id=r#"Brave-browser$"#
-    open-fullscreen true
+    open-maximized true
     open-on-workspace "browser"
 }
 window-rule{
   match app-id=r#"Brave-browser$"# title="^Picture in picture$"
-    open-floating true
+  open-floating true
+}
+
+window-rule {
+  match app-id=r#"^steam$"#
+  open-maximized true
 
 }
 
@@ -348,6 +368,7 @@ window-rule{
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
+    draw-border-with-background false
 }
 
 binds {
@@ -366,13 +387,10 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
+    Super+E { spawn "dolphin"; }
     Super+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "wezterm"; }
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-
-    // You can also use a shell. Do this if you need pipes, multiple commands, etc.
-    // Note: the entire command goes as a single argument in the end.
-    // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -588,7 +606,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    // Mod+W { toggle-column-tabbed-display; }
+    Mod+T { toggle-column-tabbed-display; }
 
     Mod+W { toggle-overview; }
     // Actions to switch layouts.
