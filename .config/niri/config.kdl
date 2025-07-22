@@ -20,11 +20,13 @@ spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "hash" "dbus-update-activation-environment"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "hyprpaper"
+spawn-at-startup "hypridle"
 
 environment {
   QT_QPA_PLATFORM "wayland"
   QT_QPA_PLATFORMTHEME "qt5ct"
   DISPLAY ":1"
+  XDG_MENU_PREFIX "arch-"
 }
 
 hotkey-overlay {
@@ -387,10 +389,10 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Super+E { spawn "dolphin"; }
-    Super+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "wezterm"; }
-    Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+E repeat=false { spawn "dolphin"; }
+    Super+Return repeat=false hotkey-overlay-title="Open a Terminal: foot" { spawn "wezterm" "start" "--always-new-process"; }
+    Mod+R repeat=false hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    F11 repeat=false hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -608,7 +610,7 @@ binds {
     // rather than stacked on top of each other.
     Mod+T { toggle-column-tabbed-display; }
 
-    Mod+W { toggle-overview; }
+    Mod+W repeat=false { toggle-overview; }
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
     // a matching layout switch hotkey configured in xkb options above.
