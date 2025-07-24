@@ -348,6 +348,11 @@ window-rule{
 }
 
 window-rule {
+  match app-id=r#"xdg-desktop-portal-gtk"#
+  open-floating true
+}
+
+window-rule {
   match app-id=r#"^steam$"#
   open-maximized true
 
@@ -392,7 +397,8 @@ binds {
     Super+E repeat=false { spawn "dolphin"; }
     Super+Return repeat=false hotkey-overlay-title="Open a Terminal: foot" { spawn "wezterm" "start" "--always-new-process"; }
     Mod+R repeat=false hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    F11 repeat=false hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
+    F11 repeat=false hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    F12 repeat=false hotkey-overlay-title="Wlogout" { spawn "wlogout"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
