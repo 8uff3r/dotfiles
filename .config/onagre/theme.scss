@@ -1,14 +1,14 @@
 .onagre {
-  background: #1e2030;
-  color: #a5adcb;
+  background: #07070df9;
+  color: #BFBDB6ff;
   --font-family: "MesloLGS Nerd Font Mono";
   --icon-theme: "Papirus";
   --font-family: "JetBrains Mono";
   --icon-size: 24;
-  border-radius: 0;
-  border-width: 1;
-  border-color: #363a4f;
-  padding: 1;
+  border-radius: 8;
+  border-width: 2;
+  border-color: #FFB454ff;
+  padding: 4;
 
   .container {
     .rows {
@@ -24,7 +24,7 @@
 
         .category-icon {
           padding-left: 5px;
-          --icon-size: 4;
+          --icon-size: 10;
         }
 
         .title {
@@ -38,20 +38,21 @@
 
       .row-selected {
         --width: 400;
-        color: #cad3f5;
+        color: #59C2FFFF;
+        background: #273244;
 
          .icon {
           padding-top: 4px;
         }
 
         .category-icon {
-          padding-left: 0;
-          --icon-size: 0;
+          padding-left: 2;
+          --icon-size: 10;
         }
 
         .title {
           font-size: 18px;
-          color: #c6a0f6;
+          color: #59C2FFFF;
         }
 
         .description {
@@ -64,7 +65,7 @@
       background: #181926;
       color: #cad3f5;
       border-width: 1;
-      border-color: #363a4f;
+      border-color: #FFB454ff;
       --height: fill-portion 1;
       padding: 4px;
 
@@ -75,11 +76,11 @@
     }
 
     .scrollable {
-      width: 2px;
+      width: 1px;
       background: #1e2030;
 
       .scroller {
-        width: 2px;
+        width: 1px;
         color: #181926;
       }
     }
