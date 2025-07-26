@@ -21,6 +21,7 @@ spawn-at-startup "hash" "dbus-update-activation-environment"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "hyprpaper"
 spawn-at-startup "hypridle"
+spawn-at-startup "env" "XDG_MENU_PREFIX=arch-" "kbuildsycoca6"
 
 environment {
   QT_QPA_PLATFORM "wayland"
