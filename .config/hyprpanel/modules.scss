@@ -1,0 +1,17 @@
+@include styleModule(
+    // class name
+    'cmodule-brightness',
+    // styling properties
+    (
+            'display': flex,
+            'align-items': start,
+            'text-color': #FFFFFF,
+            // 'icon-color': #242438,
+            'icon-background': #FFFFFF,
+            'label-background': #000000,
+            'inner-spacing': 0.5em,
+            'border-enabled': false,
+            'border-color': #FFFFFF,
+            'icon-size': 1.2em
+        )
+);

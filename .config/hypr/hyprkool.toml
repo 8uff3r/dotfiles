@@ -19,7 +19,7 @@ switch_workspace_on_edge = true
 polling_rate = 300 # in ms
 
 # number of pixels to consider as edge
-edge_width = 0
+edge_width = 10
 
 # number of pixels to push cursor inside when it loops around
-edge_margin = 2
+edge_margin = 10
