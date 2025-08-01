@@ -388,7 +388,7 @@
   "theme.bar.buttons.notifications.border": "#FFFFFF",
   "theme.bar.buttons.clock.border": "#FFFFFF",
   "theme.bar.buttons.battery.border": "#FFFFFF",
-  "theme.bar.buttons.systray.border": "#444444",
+  "theme.bar.buttons.systray.border": "#ffffff",
   "theme.bar.buttons.bluetooth.border": "#FFFFFF",
   "theme.bar.buttons.network.border": "#FFFFFF",
   "theme.bar.buttons.volume.border": "#FFFFFF",
