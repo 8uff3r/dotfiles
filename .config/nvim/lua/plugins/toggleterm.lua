@@ -12,7 +12,7 @@ return {
       return {
         shell = "/bin/fish",
         close_on_exit = true,
-        autochdir = true,
+        autochdir = false,
 
         open_mapping = [[<c-'>]],
         float_opts = {
