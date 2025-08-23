@@ -73,8 +73,10 @@ local config = {
 	warn_about_missing_glyphs = false,
 	window_background_opacity = 0.95,
 	text_background_opacity = 0.95,
+	harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig", "liga" },
 
 	font = wezterm.font_with_fallback({
+		{ family = "MonaspiceNe Nerd Font", weight = 500 },
 		{ family = "Jetbrains Mono", weight = 480 },
 		{ family = "Vazir Code", weight = "DemiBold" },
 		{ family = "Symbols Nerd Font Mono" },
@@ -83,10 +85,9 @@ local config = {
 	font_rules = {
 		{
 			italic = true,
-			font = wezterm.font({
-				family = "Jetbrains Mono",
-				weight = "DemiBold",
-				-- style = "Normal",
+			font = wezterm.font_with_fallback({
+				{ family = "MonaspiceKr Nerd Font", weight = 500 },
+				{ family = "Jetbrains Mono", weight = "DemiBold" },
 			}),
 		},
 	},
