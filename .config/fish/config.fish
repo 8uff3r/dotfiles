@@ -58,6 +58,4 @@ source ~/.config/.env
 # This section can be safely removed at any time if needed.
 test -r '/home/rylan/.opam/opam-init/init.fish' && source '/home/rylan/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
-
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /home/rylan/.lmstudio/bin
+source ~/.config/fish/colorized.fish
