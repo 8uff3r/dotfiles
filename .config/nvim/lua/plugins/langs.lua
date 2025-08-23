@@ -26,18 +26,18 @@ return {
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
   },
-  -- {
-  --   "numToStr/Comment.nvim",
-  --   keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
-  --   opts = function()
-  --     return { pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook() }
-  --   end,
-  --   config = function()
-  --     local ft = require("Comment.ft")
-  --     ft.csharp = { "//%s", "/* %s */" }
-  --     require("Comment").setup()
-  --   end,
-  -- },
+  {
+    "numToStr/Comment.nvim",
+    lazy = false,
+    opts = function()
+      return { pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook() }
+    end,
+    config = function()
+      local ft = require("Comment.ft")
+      ft.csharp = { "//%s", "/* %s */" }
+      require("Comment").setup()
+    end,
+  },
   {
     "mrcjkb/rustaceanvim",
     opts = {
