@@ -82,21 +82,8 @@ return {
           },
         },
         rust_analyzer = {
-          settings = {
-            ["rust-analyzer"] = {
-              rustfmt = {
-                overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
-              },
-              procMacro = {
-                ignored = {
-                  leptos_macro = {
-                    "component",
-                    "server",
-                  },
-                },
-              },
-            },
-          },
+          mason = false,
+          enabled = false,
         },
         volar = {
           filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
