@@ -6,15 +6,12 @@
 local autochdir_group = vim.api.nvim_create_augroup("SmartChdir", { clear = true })
 
 --- A list of filenames that indicate the root of a project.
--- You can easily add or remove file names from this list to suit your projects.
 local root_markers = {
   "package.json", -- Node.js/NPM project
   "cargo.toml", -- Rust/Cargo project
   "go.mod", -- Go project
   "pubspec.yaml", -- Dart/Flutter project
   "pyproject.toml", -- Python/Poetry/PEP 518 project
-  "pom.xml", -- Java/Maven project
-  "build.gradle", -- Java/Gradle project
   "mix.exs", -- Elixir/Mix project
 }
 

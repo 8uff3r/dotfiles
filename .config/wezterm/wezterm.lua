@@ -76,12 +76,14 @@ local config = {
 	harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig", "liga" },
 
 	font = wezterm.font_with_fallback({
-		{ family = "MonaspiceNe Nerd Font", weight = 500 },
+		{ family = "Hack Nerd Font Mono", weight = 400 },
+		{ family = "MonaspiceNe Nerd Font", weight = 400 },
+		{ family = "FiraCode Nerd Font", weight = 450 },
 		{ family = "Jetbrains Mono", weight = 480 },
-		{ family = "Vazir Code", weight = "DemiBold" },
 		{ family = "Symbols Nerd Font Mono" },
+		{ family = "Vazir Code", weight = 600 },
 	}),
-	font_size = 14,
+	font_size = 13,
 	font_rules = {
 		{
 			italic = true,

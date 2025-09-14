@@ -9,7 +9,7 @@ return {
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- change a keymap
       -- keys[#keys + 1] = { "K", "<cmd>Lspsaga hover_doc<CR>" }
-      keys[#keys + 1] = { "gd", "<cmd>Lspsaga goto_definition<CR>" }
+      -- keys[#keys + 1] = { "gd", "<cmd>Lspsaga goto_definition<CR>" }
       keys[#keys + 1] = { "<leader>ca", false, mode = { "n", "v" } }
       keys[#keys + 1] = { "<leader>cA", false }
       keys[#keys + 1] = { "<leader>cr", false }
@@ -87,13 +87,15 @@ return {
         },
         volar = {
           filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-          -- filetypes = { "vue" },
           init_options = {
             vue = {
               hybridMode = false,
             },
           },
           settings = {
+            typescript = {
+              disableAutomaticTypeAcquisition = true,
+            },
             vue = {
               autoInsert = {
                 bracketSpacing = true,

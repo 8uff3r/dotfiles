@@ -47,7 +47,6 @@ return {
           ["rust-analyzer"] = {
             procMacro = {
               enable = true,
-              ignored = true,
             },
             diagnostics = {
               enable = true,
