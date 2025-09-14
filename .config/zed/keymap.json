@@ -7,12 +7,6 @@
 // from the command palette.
 [
   {
-    "context": "Workspace && !(vim_mode == insert)",
-    "bindings": {
-      "space space": "file_finder::Toggle"
-    }
-  },
-  {
     "context": "Editor",
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
@@ -31,13 +25,19 @@
     }
   },
   {
-    "context": "Workspace && !(vim_mode == insert)",
+    "context": "Workspace && !(vim_mode == insert) && !Terminal",
+    "bindings": {
+      "space space": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Workspace && !(vim_mode == insert) && !Terminal",
     "bindings": {
       "space e": "workspace::ToggleLeftDock"
     }
   },
   {
-    "context": "BufferSearchBar && !(vim_mode == insert)",
+    "context": "BufferSearchBar && !(vim_mode == insert) && !Terminal",
     "bindings": {
       "space .": "search::ToggleReplace"
     }
