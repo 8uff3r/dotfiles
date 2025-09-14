@@ -7,6 +7,27 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "lsp": {
+    "biome": {
+      "binary": {
+        "path": "/usr/bin/biome",
+        "arguments": ["lsp-proxy"],
+        "ignore_system_version": false
+      }
+    }
+  },
+  "languages": {
+    "Vue.js": {
+      "tab_size": 2,
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    }
+  },
   "terminal": {
     "shell": {
       "program": "fish"
@@ -41,7 +62,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Mocha"
+    "dark": "Ayu Darker"
   },
   "language_models": {
     "openai": {
