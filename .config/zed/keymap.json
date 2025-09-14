@@ -53,13 +53,23 @@
     }
   },
   {
-    "context": "vim_mode==normal",
+    "bindings": {
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-k": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
     "bindings": {
       "H": "pane::ActivatePreviousItem"
     }
   },
   {
-    "context": "vim_mode==normal",
+    "context": "vim_mode == normal",
     "bindings": {
       "L": "pane::ActivateNextItem"
     }
