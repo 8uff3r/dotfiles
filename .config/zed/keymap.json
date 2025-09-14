@@ -1,0 +1,72 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace && !(vim_mode == insert)",
+    "bindings": {
+      "space space": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "(Editor && mode == full)",
+    "bindings": {
+      "ctrl-alt-r": "buffer_search::DeployReplace"
+    }
+  },
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      "ctrl-alt-r": "search::ToggleReplace"
+    }
+  },
+  {
+    "context": "Workspace && !(vim_mode == insert)",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "BufferSearchBar && !(vim_mode == insert)",
+    "bindings": {
+      "space .": "search::ToggleReplace"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "vim_mode==normal",
+    "bindings": {
+      "H": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "vim_mode==normal",
+    "bindings": {
+      "L": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "bindings": {
+      "alt-enter": "workspace::NewTerminal"
+    }
+  }
+]
