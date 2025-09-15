@@ -7,9 +7,32 @@
 // from the command palette.
 [
   {
-    "context": "Editor",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "alt-enter": "workspace::NewTerminal",
+      "ctrl-'": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Workspace && !(vim_mode == insert) && !Terminal",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space b r": "pane::CloseItemsToTheRight",
+      "space b l": "pane::CloseItemsToTheLeft",
+      "space b d": "pane::CloseActiveItem",
+      "space e": "workspace::ToggleLeftDock",
+      "space .": "search::ToggleReplace",
+      "space s f": [
+        "task::Spawn",
+        { "task_name": "file_finder", "reveal_target": "center" }
+      ],
+      "space s g": [
+        "task::Spawn",
+        { "task_name": "fulltext_search", "reveal_target": "center" }
+      ]
     }
   },
   {
@@ -25,99 +48,17 @@
     }
   },
   {
-    "context": "Workspace && !(vim_mode == insert) && !Terminal",
-    "bindings": {
-      "space space": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Workspace && !(vim_mode == insert) && !Terminal",
-    "bindings": {
-      "space e": "workspace::ToggleLeftDock"
-    }
-  },
-  {
-    "context": "Workspace && !(vim_mode == insert) && !Terminal",
-    "bindings": {
-      "space s g": [
-        "task::Spawn",
-        { "task_name": "fulltext_search", "reveal_target": "center" }
-      ]
-    }
-  },
-  {
-    "context": "Workspace && !(vim_mode == insert) && !Terminal",
-    "bindings": {
-      "space s f": [
-        "task::Spawn",
-        { "task_name": "file_finder", "reveal_target": "center" }
-      ]
-    }
-  },
-  {
-    "context": "BufferSearchBar && !(vim_mode == insert) && !Terminal",
-    "bindings": {
-      "space .": "search::ToggleReplace"
-    }
-  },
-  {
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft"
-    }
-  },
-  {
-    "bindings": {
-      "ctrl-l": "workspace::ActivatePaneRight"
-    }
-  },
-  {
-    "bindings": {
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
-  },
-  {
-    "bindings": {
-      "ctrl-k": "workspace::ActivatePaneUp"
-    }
-  },
-  {
     "context": "vim_mode == normal",
     "bindings": {
-      "H": "pane::ActivatePreviousItem"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
-      "alt-h": "pane::ActivatePreviousItem"
-    }
-  },
-  {
-    "context": "vim_mode == normal",
-    "bindings": {
+      "H": "pane::ActivatePreviousItem",
       "L": "pane::ActivateNextItem"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
+      "alt-h": "pane::ActivatePreviousItem",
       "alt-l": "pane::ActivateNextItem"
-    }
-  },
-  {
-    "bindings": {
-      "alt-enter": "workspace::NewTerminal"
-    }
-  },
-  {
-    "bindings": {
-      "ctrl-'": "workspace::ToggleBottomDock"
-    }
-  },
-  {
-    "context": "vim_mode == visual",
-    "bindings": {
-      "shift-s": "vim::PushAddSurrounds"
     }
   },
   {
@@ -129,12 +70,7 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": "vim::PushAddSurrounds"
-    }
-  },
-  {
-    "context": "vim_mode == visual",
-    "bindings": {
+      "shift-s": "vim::PushAddSurrounds",
       "shift-x": "vim::Exchange"
     }
   }

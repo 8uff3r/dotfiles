@@ -7,6 +7,8 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cursor_blink": false,
+  "relative_line_numbers": true,
   "icon_theme": "Colored Zed Icons Theme Dark",
   "lsp": {
     "biome": {
