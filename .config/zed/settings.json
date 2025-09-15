@@ -9,6 +9,9 @@
 {
   "cursor_blink": false,
   "relative_line_numbers": true,
+  "features": {
+    "edit_prediction_provider": "none"
+  },
   "icon_theme": "Colored Zed Icons Theme Dark",
   "lsp": {
     "biome": {
@@ -31,6 +34,8 @@
     }
   },
   "terminal": {
+    "font_family": "Vazir Code Hack",
+    "font_fallbacks": ["MonaspiceAr Nerd Font Mono"],
     "shell": {
       "program": "fish"
     }
@@ -64,7 +69,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Ayu Darker"
+    "dark": "Ayu Dark"
   },
   "language_models": {
     "openai": {
