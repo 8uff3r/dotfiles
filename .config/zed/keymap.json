@@ -69,9 +69,21 @@
     }
   },
   {
+    "context": "Terminal",
+    "bindings": {
+      "alt-h": "pane::ActivatePreviousItem"
+    }
+  },
+  {
     "context": "vim_mode == normal",
     "bindings": {
       "L": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-l": "pane::ActivateNextItem"
     }
   },
   {
