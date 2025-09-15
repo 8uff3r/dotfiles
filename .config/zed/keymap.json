@@ -78,5 +78,10 @@
     "bindings": {
       "alt-enter": "workspace::NewTerminal"
     }
+  },
+  {
+    "bindings": {
+      "ctrl-'": "workspace::ToggleBottomDock"
+    }
   }
 ]
