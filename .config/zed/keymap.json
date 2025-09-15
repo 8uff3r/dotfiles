@@ -37,6 +37,24 @@
     }
   },
   {
+    "context": "Workspace && !(vim_mode == insert) && !Terminal",
+    "bindings": {
+      "space s g": [
+        "task::Spawn",
+        { "task_name": "fulltext_search", "reveal_target": "center" }
+      ]
+    }
+  },
+  {
+    "context": "Workspace && !(vim_mode == insert) && !Terminal",
+    "bindings": {
+      "space s f": [
+        "task::Spawn",
+        { "task_name": "file_finder", "reveal_target": "center" }
+      ]
+    }
+  },
+  {
     "context": "BufferSearchBar && !(vim_mode == insert) && !Terminal",
     "bindings": {
       "space .": "search::ToggleReplace"
@@ -94,6 +112,30 @@
   {
     "bindings": {
       "ctrl-'": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds"
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-x": "vim::Exchange"
     }
   }
 ]
