@@ -41,13 +41,9 @@
     }
   },
   "agent_servers": {
-    "gemini": {
-      "command": "/usr/bin/qwen",
-      "ignore_system_version": false
-    },
     "Qwen CLI": {
-      "command": "/usr/bin/node",
-      "args": ["/usr/bin/qwen"],
+      "command": "/usr/bin/qwen",
+      "args": ["--experimental-acp"],
       "env": {}
     }
   },
