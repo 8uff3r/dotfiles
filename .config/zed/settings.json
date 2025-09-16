@@ -7,6 +7,25 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "5.230.66.147",
+      "username": "root",
+      "projects": [
+        {
+          "paths": [
+            "/root"
+          ]
+        }
+      ]
+    }
+  ],
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "max_severity": null // same values as the `diagnostics_max_severity` from the editor settings
+    }
+  },
   "cursor_blink": false,
   "relative_line_numbers": true,
   "restore_on_startup": "last_session",

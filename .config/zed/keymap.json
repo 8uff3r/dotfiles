@@ -73,5 +73,17 @@
       "shift-s": "vim::PushAddSurrounds",
       "shift-x": "vim::Exchange"
     }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "alt-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown"
+    }
   }
 ]
