@@ -9,6 +9,8 @@
 {
   "cursor_blink": false,
   "relative_line_numbers": true,
+  "restore_on_startup": "last_session",
+  "restore_on_file_reopen": true,
   "features": {
     "edit_prediction_provider": "none"
   },
