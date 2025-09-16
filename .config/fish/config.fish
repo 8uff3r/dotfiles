@@ -27,6 +27,7 @@ if status is-interactive
   fish_vi_key_bindings
   alias qr='qrencode -m 2 -t utf8'
   alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+  alias dot=dotfiles
 
   alias pkexec='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY'
   # Fedora
