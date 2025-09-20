@@ -13,9 +13,7 @@
       "username": "root",
       "projects": [
         {
-          "paths": [
-            "/root"
-          ]
+          "paths": ["/root"]
         }
       ]
     }
@@ -55,8 +53,9 @@
     }
   },
   "terminal": {
-    "font_family": "Vazir Code Hack",
-    "font_fallbacks": ["MonaspiceAr Nerd Font Mono"],
+    "font_family": "Hack Nerd Font Mono",
+    "font_fallbacks": ["Vazir Code Hack"],
+    "font_features": { "calt": true, "cv01": true },
     "shell": {
       "program": "fish"
     }
@@ -82,6 +81,8 @@
   },
   "base_keymap": "VSCode",
   "ui_font_size": 16,
+  "ui_font_family": "JetBrains Mono",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",

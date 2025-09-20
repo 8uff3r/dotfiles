@@ -23,6 +23,11 @@
       "space b r": "pane::CloseItemsToTheRight",
       "space b l": "pane::CloseItemsToTheLeft",
       "space b d": "pane::CloseActiveItem",
+      "space b o": "pane::CloseOtherItems",
+      "space p p": "projects::OpenRecent",
+      "space w v": "pane::SplitVertical",
+      "space w s": "pane::SplitHorizontal",
+      "space g g": "git_panel::ToggleFocus",
       "space e": "workspace::ToggleLeftDock",
       "space .": "search::ToggleReplace",
       "space s f": [
@@ -77,12 +82,7 @@
   {
     "context": "(VimControl && !menu)",
     "bindings": {
-      "alt-k": "editor::MoveLineUp"
-    }
-  },
-  {
-    "context": "(VimControl && !menu)",
-    "bindings": {
+      "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown"
     }
   }
