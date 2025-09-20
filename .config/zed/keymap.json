@@ -30,7 +30,6 @@
       "space g g": "git_panel::ToggleFocus",
       "space l r": "editor::RestartLanguageServer",
       "space e": "workspace::ToggleLeftDock",
-      "space .": "search::ToggleReplace",
       "space s f": [
         "task::Spawn",
         { "task_name": "file_finder", "reveal_target": "center" }
@@ -42,49 +41,72 @@
     }
   },
   {
-    "context": "(Editor && mode == full)",
+    "context": "Pane",
     "bindings": {
-      "ctrl-alt-r": "buffer_search::DeployReplace"
-    }
-  },
-  {
-    "context": "BufferSearchBar",
-    "bindings": {
-      "ctrl-alt-r": "search::ToggleReplace"
-    }
-  },
-  {
-    "context": "vim_mode == normal",
-    "bindings": {
-      "H": "pane::ActivatePreviousItem",
-      "L": "pane::ActivateNextItem"
+      "ctrl-alt-shift-h": null,
+      "ctrl-r": "search::ToggleReplace"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
       "alt-h": "pane::ActivatePreviousItem",
-      "alt-l": "pane::ActivateNextItem"
+      "alt-l": "pane::ActivateNextItem",
+      "alt-w v": "pane::SplitVertical",
+      "alt-w s": "pane::SplitHorizontal"
     }
   },
   {
-    "context": "vim_mode == normal || vim_mode == visual",
+    "context": "Editor && !menu",
     "bindings": {
-      "s": "vim::PushSneak"
+      "ctrl-c": "editor::Copy", // vim default: return to normal mode
+      "ctrl-x": "editor::Cut", // vim default: decrement
+      "ctrl-s": "workspace::Save", // vim default: show signature
+      "ctrl-a": "editor::SelectAll" // vim default: increment
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "H": "pane::ActivatePreviousItem",
+      "L": "pane::ActivateNextItem",
+      "s": "vim::PushSneak",
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+      "shift-x": "vim::Exchange"
     }
   },
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": "vim::PushAddSurrounds",
-      "shift-x": "vim::Exchange"
+      "shift-s": "vim::PushAddSurrounds"
     }
   },
   {
-    "context": "(VimControl && !menu)",
+    "context": "VimControl && !menu && vim_mode != operator",
     "bindings": {
-      "alt-k": "editor::MoveLineUp",
-      "alt-j": "editor::MoveLineDown"
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "vim_operator == c",
+    "bindings": {
+      "s": "vim::PushChangeSurrounds"
+    }
+  },
+  {
+    "context": "vim_operator == y",
+    "bindings": {
+      "s": "vim::PushAddSurrounds"
+    }
+  },
+  {
+    "context": "vim_operator == d",
+    "bindings": {
+      "s": "vim::PushDeleteSurrounds"
     }
   }
 ]
