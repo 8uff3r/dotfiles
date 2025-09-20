@@ -29,6 +29,7 @@
       "space p p": "projects::OpenRecent",
       "space g g": "git_panel::ToggleFocus",
       "space l r": "editor::RestartLanguageServer",
+      "space o": "outline::Toggle",
       "space e": "workspace::ToggleLeftDock",
       "space s f": [
         "task::Spawn",

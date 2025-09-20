@@ -34,6 +34,9 @@
   "icon_theme": "Colored Zed Icons Theme Dark",
   "lsp": {
     "biome": {
+      "settings": {
+        "require_config_file": true
+      },
       "binary": {
         "path": "/usr/bin/biome",
         "arguments": ["lsp-proxy"],
