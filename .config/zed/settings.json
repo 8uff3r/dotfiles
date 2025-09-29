@@ -7,6 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // "show_edit_predictions": true,
+  // "edit_predictions": {
+  //   "mode": "subtle"
+  // },
+  // "features": {
+  //   "edit_prediction_provider": "zed"
+  // },
+  "show_edit_predictions": false,
   "ssh_connections": [
     {
       "host": "5.230.66.147",
@@ -21,16 +29,13 @@
   "diagnostics": {
     "inline": {
       "enabled": true,
-      "max_severity": null // same values as the `diagnostics_max_severity` from the editor settings
+      "max_severity": "warning" // same values as the `diagnostics_max_severity` from the editor settings
     }
   },
   "cursor_blink": false,
   "relative_line_numbers": true,
   "restore_on_startup": "last_session",
   "restore_on_file_reopen": true,
-  "features": {
-    "edit_prediction_provider": "none"
-  },
   "icon_theme": "Colored Zed Icons Theme Dark",
   "lsp": {
     "biome": {
@@ -45,6 +50,9 @@
     }
   },
   "languages": {
+    "TypeScript": {
+      "language_servers": ["!typescript-language-server", "..."]
+    },
     "Vue.js": {
       "tab_size": 2,
       "formatter": {
@@ -71,10 +79,14 @@
     }
   },
   "agent": {
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
     "model_parameters": [],
     "default_model": {
-      "provider": "openai",
-      "model": "gemini-2.0-flash"
+      "provider": "zed.dev",
+      "model": "gpt-5-nano"
     }
   },
   "vim_mode": true,

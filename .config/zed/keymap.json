@@ -13,11 +13,14 @@
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
       "alt-enter": "workspace::NewTerminal",
-      "ctrl-'": "workspace::ToggleBottomDock"
+      "ctrl-'": "workspace::ToggleBottomDock",
+      "ctrl-w": "pane::CloseActiveItem",
+      "alt-.": "vim::ResizePaneRight",
+      "alt-,": "vim::ResizePaneLeft"
     }
   },
   {
-    "context": "Workspace && !(vim_mode == insert) && !Terminal",
+    "context": "VimControl && !Terminal",
     "bindings": {
       "space space": "file_finder::Toggle",
       "space b r": "pane::CloseItemsToTheRight",
@@ -108,6 +111,19 @@
     "context": "vim_operator == d",
     "bindings": {
       "s": "vim::PushDeleteSurrounds"
+    }
+  },
+  {
+    "context": "vim_mode == insert && Editor",
+    "bindings": {
+      "alt-h": "editor::NextEditPrediction",
+      "alt-g": "editor::PreviousEditPrediction"
+    }
+  },
+  {
+    "context": "multibuffer",
+    "bindings": {
+      "alt-f": "search::FocusSearch"
     }
   }
 ]
