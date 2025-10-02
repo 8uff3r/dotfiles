@@ -20,7 +20,7 @@
     }
   },
   {
-    "context": "VimControl && !Terminal",
+    "context": "(VimControl && !Terminal) || menu",
     "bindings": {
       "space space": "file_finder::Toggle",
       "space b r": "pane::CloseItemsToTheRight",
@@ -41,7 +41,13 @@
       "space s g": [
         "task::Spawn",
         { "task_name": "fulltext_search", "reveal_target": "center" }
-      ]
+      ],
+      "H": "pane::ActivatePreviousItem",
+      "L": "pane::ActivateNextItem",
+      "s": "vim::PushSneak",
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+      "shift-x": "vim::Exchange"
     }
   },
   {
@@ -67,17 +73,6 @@
       "ctrl-x": "editor::Cut", // vim default: decrement
       "ctrl-s": "workspace::Save", // vim default: show signature
       "ctrl-a": "editor::SelectAll" // vim default: increment
-    }
-  },
-  {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "H": "pane::ActivatePreviousItem",
-      "L": "pane::ActivateNextItem",
-      "s": "vim::PushSneak",
-      "alt-k": "editor::MoveLineUp",
-      "alt-j": "editor::MoveLineDown",
-      "shift-x": "vim::Exchange"
     }
   },
   {
