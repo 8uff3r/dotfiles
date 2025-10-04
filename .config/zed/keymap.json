@@ -20,7 +20,7 @@
     }
   },
   {
-    "context": "(VimControl && !Terminal) || menu",
+    "context": "(VimControl && !Terminal) || (menu && !showing_completions && !edit_prediction)",
     "bindings": {
       "space space": "file_finder::Toggle",
       "space b r": "pane::CloseItemsToTheRight",
@@ -42,12 +42,17 @@
         "task::Spawn",
         { "task_name": "fulltext_search", "reveal_target": "center" }
       ],
-      "H": "pane::ActivatePreviousItem",
-      "L": "pane::ActivateNextItem",
-      "s": "vim::PushSneak",
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
       "shift-x": "vim::Exchange"
+    }
+  },
+  {
+    "context": "VimControl && Editor",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "H": "pane::ActivatePreviousItem",
+      "L": "pane::ActivateNextItem"
     }
   },
   {
