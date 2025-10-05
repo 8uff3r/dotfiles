@@ -20,6 +20,20 @@
     }
   },
   {
+    "context": "!GitPanel && Editor",
+    "bindings": {
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "alt-j": "git_panel::FocusEditor",
+      "alt-k": "git_panel::FocusChanges"
+    }
+  },
+  {
     "context": "(VimControl && !Terminal) || (menu && !showing_completions && !edit_prediction)",
     "bindings": {
       "space space": "file_finder::Toggle",
@@ -42,8 +56,6 @@
         "task::Spawn",
         { "task_name": "fulltext_search", "reveal_target": "center" }
       ],
-      "alt-k": "editor::MoveLineUp",
-      "alt-j": "editor::MoveLineDown",
       "shift-x": "vim::Exchange"
     }
   },
