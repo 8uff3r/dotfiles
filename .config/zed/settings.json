@@ -7,13 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  // "show_edit_predictions": true,
-  // "edit_predictions": {
-  //   "mode": "subtle"
-  // },
-  // "features": {
-  //   "edit_prediction_provider": "zed"
-  // },
   "show_edit_predictions": true,
   "ssh_connections": [
     {
@@ -26,6 +19,8 @@
       ]
     }
   ],
+  "soft_wrap": "preferred_line_length",
+  "preferred_line_length": 110,
   "diagnostics": {
     "inline": {
       "enabled": true,
