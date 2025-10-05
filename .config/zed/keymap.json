@@ -137,5 +137,27 @@
     "bindings": {
       "alt-f": "search::FocusSearch"
     }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "j": [
+        "vim::Down",
+        {
+          "display_lines": true
+        }
+      ]
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "k": [
+        "vim::Up",
+        {
+          "display_lines": true
+        }
+      ]
+    }
   }
 ]
