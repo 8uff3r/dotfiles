@@ -34,7 +34,7 @@
     }
   },
   {
-    "context": "(VimControl && !Terminal) || (menu && !showing_completions && !edit_prediction)",
+    "context": "(VimControl && !Terminal) || (menu && !showing_completions && !edit_prediction) || EmptyPane",
     "bindings": {
       "space space": "file_finder::Toggle",
       "space b r": "pane::CloseItemsToTheRight",
@@ -48,14 +48,8 @@
       "space l r": "editor::RestartLanguageServer",
       "space o": "outline::Toggle",
       "space e": "workspace::ToggleLeftDock",
-      "space s f": [
-        "task::Spawn",
-        { "task_name": "file_finder", "reveal_target": "center" }
-      ],
-      "space s g": [
-        "task::Spawn",
-        { "task_name": "fulltext_search", "reveal_target": "center" }
-      ],
+      "space s f": ["task::Spawn", { "task_name": "file_finder", "reveal_target": "center" }],
+      "space s g": ["task::Spawn", { "task_name": "fulltext_search", "reveal_target": "center" }],
       "shift-x": "vim::Exchange"
     }
   },
@@ -129,7 +123,8 @@
     "context": "vim_mode == insert && Editor",
     "bindings": {
       "alt-h": "editor::NextEditPrediction",
-      "alt-g": "editor::PreviousEditPrediction"
+      "alt-g": "editor::PreviousEditPrediction",
+      "alt-;": "editor::AcceptEditPrediction"
     }
   },
   {

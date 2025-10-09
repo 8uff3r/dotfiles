@@ -31,6 +31,7 @@
   "relative_line_numbers": true,
   "restore_on_startup": "last_session",
   "restore_on_file_reopen": true,
+  "close_on_file_delete": false,
   "icon_theme": "Colored Zed Icons Theme Dark",
   "lsp": {
     "biome": {
