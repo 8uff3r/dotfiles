@@ -128,6 +128,10 @@
       "reboot": ["systemctl", "reboot"]
     }
   },
+  "sidebar": {
+    "enabled": true,
+    "dragThreshold": 90
+  },
   "utilities": {
     "enabled": true,
     "maxToasts": 4,
