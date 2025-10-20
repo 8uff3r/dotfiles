@@ -124,7 +124,7 @@
     "commands": {
       "logout": ["loginctl", "kill-session", "$XDG_SESSION_ID"],
       "shutdown": ["systemctl", "poweroff"],
-      "hibernate": ["systemctl", "suspend"],
+      "hibernate": ["sh", "-c", "caelestia shell lock lock && systemctl suspend"],
       "reboot": ["systemctl", "reboot"]
     }
   },
