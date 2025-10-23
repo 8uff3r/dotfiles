@@ -71,8 +71,8 @@
   {
     "context": "Terminal",
     "bindings": {
-      "alt-h": "pane::ActivatePreviousItem",
-      "alt-l": "pane::ActivateNextItem",
+      "ctrl-h": "pane::ActivatePreviousItem",
+      "ctrl-l": "pane::ActivateNextItem",
       "alt-w v": "pane::SplitVertical",
       "alt-w s": "pane::SplitHorizontal"
     }
