@@ -1,3 +1,6 @@
+# Kitty search from https://github.com/trygveaa/kitty-kitten-search
+# License: GPLv3
+
 import json
 import re
 import subprocess
@@ -17,7 +20,7 @@ from kittens.tui.operations import (
 )
 from kitty.config import cached_values_for
 from kitty.key_encoding import EventType
-from kitty.typing import KeyEventType, ScreenSize
+from kitty.typing_compat import KeyEventType, ScreenSize
 
 NON_SPACE_PATTERN = re.compile(r"\S+")
 SPACE_PATTERN = re.compile(r"\s+")
@@ -252,10 +255,10 @@ class Search(Handler):
         elif key_event.matches("tab"):
             self.switch_mode()
             self.refresh()
-        elif key_event.matches("up"):
+        elif key_event.matches("up") or key_event.matches("f3"):
             for match_arg in self.match_args():
                 call_remote_control(["kitten", match_arg, str(SCROLLMARK_FILE)])
-        elif key_event.matches("down"):
+        elif key_event.matches("down") or key_event.matches("shift+f3"):
             for match_arg in self.match_args():
                 call_remote_control(["kitten", match_arg, str(SCROLLMARK_FILE), "next"])
         elif key_event.matches("enter"):
