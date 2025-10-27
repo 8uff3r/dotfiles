@@ -107,7 +107,7 @@
         "cornerStyle": 1,
         "indicators": {
             "notifications": {
-                "showUnreadCount": false
+                "showUnreadCount": true
             }
         },
         "resources": {
