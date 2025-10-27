@@ -210,11 +210,18 @@ def get_keybind_at_line(line_number, line_start=0):
 def remove_keybind_recursive(section, target_key, target_mods):
     """Recursively remove keybindings with matching key and mods from section and all children"""
     # Remove from current section
+    # for kb in section["keybinds"]:
+    #     if kb["comment"] == "Code editor":
+    #         print("kb:", kb)
+    #     if kb["key"] == target_key and kb["mods"] == target_mods:
+    #         print("Removing keybind:", kb)
+    #         break
     section["keybinds"] = [
         kb
         for kb in section["keybinds"]
         if kb["key"] != target_key or kb["mods"] != target_mods
     ]
+    # print(target_key, target_mods)
 
     # Recursively remove from children
     for child in section["children"]:
@@ -228,6 +235,7 @@ def remove_keybind_recursive(section, target_key, target_mods):
 def get_binds_recursive(current_content, scope, root_section=None):
     global content_lines
     global reading_line
+    global unbindingKeys
     # If root_section is not provided, current_content is the root
     if root_section is None:
         root_section = current_content
@@ -271,8 +279,7 @@ def get_binds_recursive(current_content, scope, root_section=None):
         elif line.lstrip().startswith("unbind"):
             keybind = get_unbind_key_at_line(reading_line)
             if keybind != None:
-                # Remove keybind recursively from root section (affects all sections)
-                remove_keybind_recursive(root_section, keybind["key"], keybind["mods"])
+                unbindingKeys.append(keybind)
 
         else:  # Normal keybind
             keybind = get_keybind_at_line(reading_line)
@@ -280,12 +287,15 @@ def get_binds_recursive(current_content, scope, root_section=None):
                 current_content["keybinds"].append(keybind)
 
         reading_line += 1
+    for unbind in unbindingKeys:
+        remove_keybind_recursive(root_section, unbind["key"], unbind["mods"])
 
     return current_content
 
 
 def parse_keys(paths: List[str]) -> Dict[str, List[KeyBinding]]:
     global content_lines
+    global unbindingKeys
     concatenated_content = []
 
     for path in paths:
@@ -295,6 +305,7 @@ def parse_keys(paths: List[str]) -> Dict[str, List[KeyBinding]]:
         concatenated_content.append(content)
 
     content_lines = "\n".join(concatenated_content).splitlines()
+    unbindingKeys = []
     return get_binds_recursive(Section([], [], ""), 0)
 
 
