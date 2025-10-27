@@ -81,6 +81,7 @@
     }
   },
   "agent": {
+    "default_profile": "write",
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "zed.dev",
