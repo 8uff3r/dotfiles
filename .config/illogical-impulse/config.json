@@ -191,14 +191,7 @@
         ],
         "monochromeIcons": false,
         "pinnedApps": [
-            "kitty",
-            "org.kde.dolphin",
-            "code-oss",
-            "dbgate",
-            "brave-browser",
-            "org.telegram.desktop",
-            "gephgui-wry",
-            "throne"
+            "dev.zed.zed"
         ],
         "pinnedOnStartup": false
     },
