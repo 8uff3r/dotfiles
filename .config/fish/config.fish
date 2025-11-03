@@ -59,6 +59,9 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias dnfu='sudo dnf update'
     alias dnfs='dnf search'
     alias sp='export HTTP_PROXY=http://127.0.0.1:10808 && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY'
+    alias diff="kitten diff"
+    alias icat="kitten icat"
+    alias kssh="kitten ssh"
 
     function csp
       export HTTP_PROXY=$argv && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY

@@ -349,7 +349,7 @@
         },
         "quickToggles": {
             "android": {
-                "columns": 4,
+                "columns": 6,
                 "toggles": [
                     {
                         "size": 2,
@@ -398,6 +398,14 @@
                     {
                         "size": 1,
                         "type": "musicRecognition"
+                    },
+                    {
+                        "size": 1,
+                        "type": "notifications"
+                    },
+                    {
+                        "size": 1,
+                        "type": "cloudflareWarp"
                     }
                 ]
             },
