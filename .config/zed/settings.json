@@ -49,6 +49,15 @@
         "arguments": ["lsp-proxy"],
         "ignore_system_version": false
       }
+    },
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        }
+      }
     }
   },
   "languages": {
