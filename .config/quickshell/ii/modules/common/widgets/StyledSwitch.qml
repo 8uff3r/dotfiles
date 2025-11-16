@@ -9,7 +9,7 @@ import Qt5Compat.GraphicalEffects
  */
 Switch {
     id: root
-    property real scale: 0.6 // Default in m3 spec is huge af
+    property real scale: 0.75 // Default in m3 spec is huge af
     implicitHeight: 32 * root.scale
     implicitWidth: 52 * root.scale
     property color activeColor: Appearance?.colors.colPrimary ?? "#685496"
@@ -47,21 +47,21 @@ Switch {
         Behavior on anchors.leftMargin {
             NumberAnimation {
                 duration: Appearance.animationCurves.expressiveFastSpatialDuration
-                easing.type: Easing.BezierCurve
+                easing.type: Easing.BezierSpline
                 easing.bezierCurve: Appearance.animationCurves.expressiveFastSpatial
             }
         }
         Behavior on width {
             NumberAnimation {
                 duration: Appearance.animationCurves.expressiveFastSpatialDuration
-                easing.type: Easing.BezierCurve
+                easing.type: Easing.BezierSpline
                 easing.bezierCurve: Appearance.animationCurves.expressiveFastSpatial
             }
         }
         Behavior on height {
             NumberAnimation {
                 duration: Appearance.animationCurves.expressiveFastSpatialDuration
-                easing.type: Easing.BezierCurve
+                easing.type: Easing.BezierSpline
                 easing.bezierCurve: Appearance.animationCurves.expressiveFastSpatial
             }
         }

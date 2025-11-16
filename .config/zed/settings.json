@@ -12,9 +12,20 @@
     {
       "host": "5.230.66.147",
       "username": "root",
+      "args": [],
       "projects": [
         {
           "paths": ["/root"]
+        }
+      ]
+    },
+    {
+      "host": "185.231.181.103",
+      "username": "ubuntu",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/ubuntu"]
         }
       ]
     }
@@ -28,7 +39,7 @@
     }
   },
   "cursor_blink": false,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "restore_on_startup": "last_session",
   "restore_on_file_reopen": true,
   "close_on_file_delete": false,
@@ -43,13 +54,14 @@
     "biome": {
       "settings": {
         "require_config_file": true
-      },
-      "binary": {
-        "path": "/usr/bin/biome",
-        "arguments": ["lsp-proxy"],
-        "ignore_system_version": false
       }
     },
+    //   "binary": {
+    //     "path": "/usr/bin/biome",
+    //     "arguments": ["lsp-proxy"],
+    //     "ignore_system_version": false
+    //   }
+    // },
     "vscode-css-language-server": {
       "settings": {
         "css": {
@@ -66,6 +78,7 @@
     },
     "Vue.js": {
       "tab_size": 2,
+      "language_servers": ["!biome", "!vtsls", "..."],
       "formatter": {
         "external": {
           "command": "prettier",
@@ -99,7 +112,7 @@
     "model_parameters": [],
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
+      "model": "claude-sonnet-4-5-thinking"
     }
   },
   "vim_mode": true,
