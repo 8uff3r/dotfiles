@@ -12,7 +12,7 @@ Loader {
 
     required property var contentItem
     property real padding: Looks.radius.large - Looks.radius.medium
-    property bool noSmoothClosing: !Config.options.waffles.smootherAnimations
+    property bool noSmoothClosing: !Config.options.waffles.tweaks.smootherMenuAnimations
     property bool closeOnFocusLost: true
     signal focusCleared()
     
@@ -32,6 +32,10 @@ Loader {
 
     function close() {
         item.close();
+    }
+
+    function updateAnchor() {
+        item?.anchor.updateAnchor();
     }
 
     active: false
@@ -66,8 +70,8 @@ Loader {
             focusGrab.active = true; // Doesn't work
         }
 
-        implicitWidth: realContent.implicitWidth + (ambientShadow.border.width * 2) + (root.visualMargin * 2)
-        implicitHeight: realContent.implicitHeight + (ambientShadow.border.width * 2) + (root.visualMargin * 2)
+        implicitWidth: realContent.implicitWidth + (root.ambientShadowWidth * 2) + (root.visualMargin * 2)
+        implicitHeight: realContent.implicitHeight + (root.ambientShadowWidth * 2) + (root.visualMargin * 2)
 
         property real sourceEdgeMargin: -implicitHeight
         PropertyAnimation {
@@ -97,17 +101,8 @@ Loader {
         }
 
         color: "transparent"
-        Rectangle {
-            id: ambientShadow
-            z: 0
-            anchors {
-                fill: realContent
-                margins: -border.width
-            }
-            border.color: ColorUtils.transparentize(Looks.colors.ambientShadow, Looks.shadowTransparency)
-            border.width: root.ambientShadowWidth
-            color: "transparent"
-            radius: realContent.radius + border.width
+        WAmbientShadow {
+            target: realContent
         }
         
         Rectangle {
@@ -123,7 +118,7 @@ Loader {
                 bottomMargin: root.barAtBottom ? popupWindow.sourceEdgeMargin : (root.ambientShadowWidth + root.visualMargin)
                 topMargin: root.barAtBottom ? (root.ambientShadowWidth + root.visualMargin) : popupWindow.sourceEdgeMargin
             }
-            color: Looks.colors.bg1
+            color: Looks.colors.bg1Base
             radius: Looks.radius.large
 
             // test

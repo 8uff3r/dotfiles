@@ -20,6 +20,15 @@
     "appearance": {
         "extraBackgroundTint": true,
         "fakeScreenRounding": 2,
+        "fonts": {
+            "expressive": "Space Grotesk",
+            "iconNerd": "JetBrains Mono NF",
+            "main": "Google Sans Flex",
+            "monospace": "JetBrains Mono NF",
+            "numbers": "Google Sans Flex",
+            "reading": "Readex Pro",
+            "title": "Google Sans Flex"
+        },
         "palette": {
             "type": "auto"
         },
@@ -141,14 +150,6 @@
             "clickToShow": false
         },
         "topLeftIcon": "spark",
-        "tray": {
-            "filterPassive": true,
-            "invertPinnedItems": true,
-            "monochromeIcons": false,
-            "pinnedItems": [
-            ],
-            "showItemId": false
-        },
         "utilButtons": {
             "showColorPicker": false,
             "showDarkModeToggle": false,
@@ -194,6 +195,9 @@
         "full": 101,
         "low": 20,
         "suspend": 3
+    },
+    "calendar": {
+        "locale": "en-GB"
     },
     "cheatsheet": {
         "fontSize": {
@@ -274,7 +278,7 @@
     },
     "light": {
         "antiFlashbang": {
-            "enable": false
+            "enable": true
         },
         "night": {
             "automatic": false,
@@ -480,6 +484,10 @@
                     {
                         "size": 1,
                         "type": "cloudflareWarp"
+                    },
+                    {
+                        "size": 1,
+                        "type": "antiFlashbang"
                     }
                 ]
             },
@@ -508,17 +516,52 @@
         "secondPrecision": false,
         "shortDateFormat": "dd/MM"
     },
+    "tray": {
+        "filterPassive": true,
+        "invertPinnedItems": true,
+        "monochromeIcons": true,
+        "pinnedItems": [
+            "Fcitx"
+        ],
+        "showItemId": false
+    },
     "updates": {
         "adviseUpdateThreshold": 75,
         "checkInterval": 120,
         "stronglyAdviseUpdateThreshold": 200
     },
     "waffles": {
+        "actionCenter": {
+            "toggles": [
+                "network",
+                "bluetooth",
+                "easyEffects",
+                "powerProfile",
+                "idleInhibitor",
+                "nightLight",
+                "darkMode",
+                "antiFlashbang",
+                "cloudflareWarp",
+                "mic",
+                "musicRecognition",
+                "notifications",
+                "onScreenKeyboard",
+                "gameMode",
+                "screenSnip",
+                "colorPicker"
+            ]
+        },
         "bar": {
             "bottom": true,
             "leftAlignApps": false
         },
-        "smootherAnimations": true
+        "calendar": {
+            "force2CharDayOfWeek": true
+        },
+        "tweaks": {
+            "smootherMenuAnimations": true,
+            "switchHandlePositionFix": true
+        }
     },
     "wallpaperSelector": {
         "useSystemFileDialog": true
