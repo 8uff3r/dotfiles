@@ -80,4 +80,4 @@ if status is-interactive # Commands to run in interactive sessions can go here
 end
 
 source ~/.config/.env
-source ~/.config/fish/colorized.fish
+#source ~/.config/fish/colorized.fish

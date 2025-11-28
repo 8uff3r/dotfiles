@@ -43,10 +43,11 @@
     },
     "apps": {
         "bluetooth": "kcmshell6 kcm_bluetooth",
-        "network": "kitty -1 fish -c nmtui",
+        "network": "kcmshell6 kcm_networkmanagement",
         "networkEthernet": "kcmshell6 kcm_networkmanagement",
         "taskManager": "plasma-systemmonitor --page-name Processes",
         "terminal": "kitty -1",
+        "update": "kitty -1 --hold=yes fish -i -c 'sudo pacman -Syu'",
         "volumeMixer": "~/.config/hypr/hyprland/scripts/launch_first_available.sh \"pavucontrol-qt\" \"pavucontrol\""
     },
     "audio": {
@@ -57,40 +58,55 @@
         }
     },
     "background": {
-        "clock": {
-            "cookie": {
-                "aiStyling": false,
-                "constantlyRotate": false,
-                "dateInClock": true,
-                "dateStyle": "border",
-                "dialNumberStyle": "dots",
-                "hourHandStyle": "classic",
-                "hourMarks": true,
-                "minuteHandStyle": "medium",
-                "secondHandStyle": "dot",
-                "sides": 14,
-                "timeIndicators": true
-            },
-            "fixedPosition": false,
-            "scale": 1,
-            "show": true,
-            "style": "digital",
-            "x": -500,
-            "y": -500
-        },
         "hideWhenFullscreen": true,
         "parallax": {
             "autoVertical": false,
-            "clockFactor": 1.2,
             "enableSidebar": true,
             "enableWorkspace": true,
             "vertical": false,
+            "widgetsFactor": 1.2,
             "workspaceZoom": 1.07
         },
-        "quote": "Cease to hope, and you will cease to fear",
-        "showQuote": true,
         "thumbnailPath": "",
-        "wallpaperPath": "/home/rylan/Pictures/Wallpapers/clair-obscur-expedition-33-4k-wallpaper-uhdpaper.com-52@5@d.jpg"
+        "wallpaperPath": "/home/rylan/Pictures/Wallpapers/LOP/download (1).jpeg",
+        "widgets": {
+            "clock": {
+                "cookie": {
+                    "aiStyling": true,
+                    "constantlyRotate": false,
+                    "dateInClock": true,
+                    "dateStyle": "bubble",
+                    "dialNumberStyle": "full",
+                    "hourHandStyle": "classic",
+                    "hourMarks": false,
+                    "minuteHandStyle": "classic",
+                    "secondHandStyle": "dot",
+                    "sides": 14,
+                    "timeIndicators": false,
+                    "useSineCookie": false
+                },
+                "digital": {
+                    "animateChange": false
+                },
+                "enable": true,
+                "placementStrategy": "free",
+                "quote": {
+                    "enable": true,
+                    "text": "Cease to hope, and you will cease to fear"
+                },
+                "showOnlyWhenLocked": false,
+                "style": "cookie",
+                "styleLocked": "cookie",
+                "x": 1523.5546875,
+                "y": 773.203125
+            },
+            "weather": {
+                "enable": false,
+                "placementStrategy": "free",
+                "x": 400,
+                "y": 100
+            }
+        }
     },
     "bar": {
         "autoHide": {
@@ -121,6 +137,9 @@
         "screenList": [
         ],
         "showBackground": true,
+        "tooltips": {
+            "clickToShow": false
+        },
         "topLeftIcon": "spark",
         "tray": {
             "filterPassive": true,
@@ -176,6 +195,17 @@
         "low": 20,
         "suspend": 3
     },
+    "cheatsheet": {
+        "fontSize": {
+            "comment": 12,
+            "key": 12
+        },
+        "splitButtons": false,
+        "superKey": "󰣇",
+        "useFnSymbol": false,
+        "useMacSymbol": false,
+        "useMouseSymbol": false
+    },
     "conflictKiller": {
         "autoKillNotificationDaemons": false,
         "autoKillTrays": true
@@ -192,10 +222,34 @@
         ],
         "monochromeIcons": false,
         "pinnedApps": [
-            "dev.zed.zed"
+            "dev.zed.zed",
+            "steam",
+            "zen"
         ],
         "pinnedOnStartup": false
     },
+    "enabledPanels": [
+        "iiBar",
+        "iiBackground",
+        "iiCheatsheet",
+        "iiDock",
+        "iiLock",
+        "iiMediaControls",
+        "iiNotificationPopup",
+        "iiOnScreenDisplay",
+        "iiOnScreenKeyboard",
+        "iiOverlay",
+        "iiOverview",
+        "iiPolkit",
+        "iiRegionSelector",
+        "iiReloadPopup",
+        "iiScreenCorners",
+        "iiSessionScreen",
+        "iiSidebarLeft",
+        "iiSidebarRight",
+        "iiVerticalBar",
+        "iiWallpaperSelector"
+    ],
     "hacks": {
         "arbitraryRaceConditionDelay": 20
     },
@@ -237,6 +291,7 @@
         },
         "centerClock": true,
         "launchOnStartup": false,
+        "materialShapeChars": true,
         "security": {
             "requirePasswordToPower": false,
             "unlockKeyring": true
@@ -264,12 +319,23 @@
         "layout": "English",
         "pinnedOnStartup": false
     },
+    "overlay": {
+        "clickthroughOpacity": 0.8,
+        "darkenScreen": true,
+        "floatingImage": {
+            "imageSource": "https://media.tenor.com/H5U5bJzj3oAAAAAi/kukuru.gif",
+            "scale": 0.5
+        },
+        "openingZoomAnimation": true
+    },
     "overview": {
+        "centerIcons": true,
         "columns": 5,
         "enable": true,
         "rows": 2,
         "scale": 0.18
     },
+    "panelFamily": "ii",
     "policies": {
         "ai": 1,
         "weeb": 1
@@ -287,12 +353,20 @@
             "contentRegionOpacity": 0.8,
             "layers": false,
             "opacity": 0.3,
+            "selectionPadding": 5,
             "showLabel": false,
             "windows": true
         }
     },
     "resources": {
+        "historyLength": 60,
         "updateInterval": 3000
+    },
+    "screenRecord": {
+        "savePath": "/home/rylan/Videos"
+    },
+    "screenSnip": {
+        "savePath": ""
     },
     "search": {
         "engineBaseUrl": "https://www.google.com/search?q=",
@@ -423,6 +497,7 @@
     },
     "time": {
         "dateFormat": "ddd, dd/MM",
+        "dateWithYearFormat": "dd/MM/yyyy",
         "format": "hh:mm",
         "pomodoro": {
             "breakTime": 300,
@@ -432,6 +507,18 @@
         },
         "secondPrecision": false,
         "shortDateFormat": "dd/MM"
+    },
+    "updates": {
+        "adviseUpdateThreshold": 75,
+        "checkInterval": 120,
+        "stronglyAdviseUpdateThreshold": 200
+    },
+    "waffles": {
+        "bar": {
+            "bottom": true,
+            "leftAlignApps": false
+        },
+        "smootherAnimations": true
     },
     "wallpaperSelector": {
         "useSystemFileDialog": true

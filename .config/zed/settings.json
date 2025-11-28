@@ -79,12 +79,7 @@
     "Vue.js": {
       "tab_size": 2,
       "language_servers": ["!biome", "!vtsls", "..."],
-      "formatter": {
-        "external": {
-          "command": "prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
+      "formatter": "prettier"
     }
   },
   "terminal": {
