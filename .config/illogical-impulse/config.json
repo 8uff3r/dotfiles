@@ -77,7 +77,7 @@
             "workspaceZoom": 1.07
         },
         "thumbnailPath": "",
-        "wallpaperPath": "/home/rylan/Pictures/Wallpapers/LOP/download (1).jpeg",
+        "wallpaperPath": "/home/rylan/Pictures/GameShots/WWM/1764117861_WMNijPiG.png",
         "widgets": {
             "clock": {
                 "cookie": {
@@ -87,11 +87,11 @@
                     "dateStyle": "bubble",
                     "dialNumberStyle": "full",
                     "hourHandStyle": "classic",
-                    "hourMarks": false,
+                    "hourMarks": true,
                     "minuteHandStyle": "classic",
                     "secondHandStyle": "dot",
-                    "sides": 14,
-                    "timeIndicators": false,
+                    "sides": 12,
+                    "timeIndicators": true,
                     "useSineCookie": false
                 },
                 "digital": {
@@ -106,8 +106,8 @@
                 "showOnlyWhenLocked": false,
                 "style": "cookie",
                 "styleLocked": "cookie",
-                "x": 1523.5546875,
-                "y": 773.203125
+                "x": 89.390625,
+                "y": 742.2421875
             },
             "weather": {
                 "enable": false,
@@ -151,20 +151,20 @@
         },
         "topLeftIcon": "spark",
         "utilButtons": {
-            "showColorPicker": false,
+            "showColorPicker": true,
             "showDarkModeToggle": false,
             "showKeyboardToggle": false,
             "showMicToggle": false,
             "showPerformanceProfileToggle": false,
             "showScreenRecord": false,
-            "showScreenSnip": false
+            "showScreenSnip": true
         },
         "verbose": true,
         "vertical": false,
         "weather": {
-            "city": "",
-            "enable": false,
-            "enableGPS": true,
+            "city": "mashhad, iran",
+            "enable": true,
+            "enableGPS": false,
             "fetchInterval": 10,
             "useUSCS": false
         },
@@ -172,16 +172,6 @@
             "alwaysShowNumbers": true,
             "monochromeIcons": false,
             "numberMap": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10"
             ],
             "showAppIcons": true,
             "showNumberDelay": 300,
@@ -205,7 +195,7 @@
             "key": 12
         },
         "splitButtons": false,
-        "superKey": "󰣇",
+        "superKey": "",
         "useFnSymbol": false,
         "useMacSymbol": false,
         "useMouseSymbol": false
@@ -278,7 +268,7 @@
     },
     "light": {
         "antiFlashbang": {
-            "enable": true
+            "enable": false
         },
         "night": {
             "automatic": false,
@@ -370,7 +360,7 @@
         "savePath": "/home/rylan/Videos"
     },
     "screenSnip": {
-        "savePath": ""
+        "savePath": "/home/rylan/Pictures/Screenshots/"
     },
     "search": {
         "engineBaseUrl": "https://www.google.com/search?q=",
@@ -519,7 +509,7 @@
     "tray": {
         "filterPassive": true,
         "invertPinnedItems": true,
-        "monochromeIcons": true,
+        "monochromeIcons": false,
         "pinnedItems": [
             "Fcitx"
         ],

@@ -1,23 +1,62 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "provider": {
-    "avalai": {
-    "npm": "@ai-sdk/openai-compatible",
-      "name": "AvalAI",
+    "nanogpt": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NanoGPT",
       "options": {
-        "baseURL":"https://api.avalai.ir/v1/chat/completions"
+        "baseURL": "https://nano-gpt.com/api/v1",
+        "apiKey": "{env:NANOGPT_API_KEY}"
       },
       "models": {
         "gemini-2.0-flash": {
           "name": "Gemini 2.0 flash"
         },
-        "claude-3-5-sonnet":{
-        "name": "Claude 3.5 Sonnet"
-      },
-
-        "gpt-4o-mini":{
-        "name": "GPT 4o-mini"
+        "gemini-2.5-pro": {
+          "name": "Gemini 2.5 PRO",
+          "thinking": {
+            "type": "enabled",
+            "budgetTokens": 16000
+          }
+        },
+        "claude-3-5-sonnet": {
+          "name": "Claude 3.5 Sonnet"
+        },
+        "gpt-4o-mini": {
+          "name": "GPT 4o-mini"
+        },
+        "claude-sonnet-4-5-20250929": {
+          "name": "Claude Sonnet 4.5"
+        },
+        "qwen/qwen3-coder": {
+          "name": "Qwen 3 Coder 480B"
+        }
       }
+    },
+    "avalai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "AvalAI",
+      "options": {
+        "baseURL": "https://api.avalai.ir/v1",
+        "apiKey": "{env:AVALAI_API_KEY}"
+      },
+      "models": {
+        "gemini-2.0-flash": {
+          "name": "Gemini 2.0 flash"
+        },
+        "gemini-2.5-pro": {
+          "name": "Gemini 2.5 PRO",
+          "thinking": {
+            "type": "enabled",
+            "budgetTokens": 16000
+          }
+        },
+        "claude-3-5-sonnet": {
+          "name": "Claude 3.5 Sonnet"
+        },
+        "gpt-4o-mini": {
+          "name": "GPT 4o-mini"
+        }
       }
     }
   }
