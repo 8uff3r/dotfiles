@@ -154,5 +154,11 @@
         }
       ]
     }
+  },
+  {
+    "context": "AgentPanel || vim_mode == insert",
+    "bindings": {
+      "ctrl-v": "editor::Paste"
+    }
   }
 ]

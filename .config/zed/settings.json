@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "git_panel": {
+    "sort_by_path": false,
+  },
   "colorize_brackets": true,
   "show_edit_predictions": true,
   "ssh_connections": [
@@ -16,9 +19,9 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/root"]
-        }
-      ]
+          "paths": ["/root"],
+        },
+      ],
     },
     {
       "host": "185.231.181.103",
@@ -26,18 +29,18 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/home/ubuntu"]
-        }
-      ]
-    }
+          "paths": ["/home/ubuntu"],
+        },
+      ],
+    },
   ],
   "soft_wrap": "preferred_line_length",
   "preferred_line_length": 110,
   "diagnostics": {
     "inline": {
       "enabled": true,
-      "max_severity": "warning" // same values as the `diagnostics_max_severity` from the editor settings
-    }
+      "max_severity": "warning", // same values as the `diagnostics_max_severity` from the editor settings
+    },
   },
   "cursor_blink": false,
   "relative_line_numbers": "enabled",
@@ -53,78 +56,79 @@
           "tsserver": {
             "maxTsServerMemory": 8192,
             "experimental": { "enableProjectDiagnostics": false },
-            "disableAutomaticTypeAcquisition": true
-          }
+            "disableAutomaticTypeAcquisition": true,
+          },
         },
         // For JavaScript:
         "javascript": {
-          "tsserver": { "maxTsServerMemory": 8192, "experimental": { "enableProjectDiagnostics": false } }
-        }
-      }
+          "tsserver": { "maxTsServerMemory": 8192, "experimental": { "enableProjectDiagnostics": false } },
+        },
+      },
     },
     "dart": {
       "binary": {
         "path": "/home/rylan/.flutter_sdk/bin/dart",
-        "arguments": ["language-server", "--protocol=lsp"]
-      }
+        "arguments": ["language-server", "--protocol=lsp"],
+      },
     },
     "biome": {
       "settings": {
-        "require_config_file": true
-      }
+        "require_config_file": true,
+      },
     },
     "vscode-css-language-server": {
       "settings": {
         "css": {
           "lint": {
-            "unknownAtRules": "ignore"
-          }
-        }
-      }
-    }
+            "unknownAtRules": "ignore",
+          },
+        },
+      },
+    },
   },
   "languages": {
     "Vue.js": {
       "tab_size": 2,
       // "language_servers": ["!biome", "!vtsls", "..."],
-      "formatter": "prettier"
-    }
+      "formatter": "prettier",
+    },
   },
   "terminal": {
     "font_family": "Hack Nerd Font Mono",
     "font_fallbacks": ["Vazir Code Hack"],
     "font_features": { "calt": true, "cv01": true },
     "shell": {
-      "program": "fish"
-    }
+      "program": "fish",
+    },
   },
   "agent_servers": {
     "Qwen CLI": {
       "type": "custom",
       "command": "/usr/bin/qwen",
       "args": ["--experimental-acp"],
-      "env": {}
-    }
+      "env": {},
+    },
   },
   "agent": {
-    "use_modifier_to_send": true,
-    "enable_feedback": false,
-    "default_profile": "minimal",
+    "expand_edit_card": false,
+    "use_modifier_to_send": false,
+    "enable_feedback": true,
+    "default_profile": "write",
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "NanoGPT",
+      "model": "moonshotai/Kimi-K2-Instruct-0905",
     },
     "model_parameters": [],
     "default_model": {
       "provider": "NanoGPT",
-      "model": "deepseek/deepseek-v3.2"
-    }
+      "model": "qwen/qwen3-coder",
+    },
   },
   "vim_mode": true,
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "base_keymap": "VSCode",
   "ui_font_size": 16,
@@ -134,22 +138,25 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Ayu Dark"
+    "dark": "Ayu Dark",
   },
 
   "context_servers": {
+    "shadcn-vue": {
+      "enabled": true,
+      "command": "bunx",
+      "args": ["--bun", "shadcn-vue@latest", "mcp"],
+    },
     "nuxt-ui": {
       "enabled": true,
-      "command": "npx",
-      "args": ["mcp-remote", "https://ui.nuxt.com/mcp"],
-      "env": {}
+      "url": "https://ui.nuxt.com/mcp",
+      "settings": {},
     },
     "nuxt": {
       "enabled": true,
-      "command": "npx",
-      "args": ["mcp-remote", "https://nuxt.com/mcp"],
-      "env": {}
-    }
+      "url": "https://nuxt.com/mcp",
+      "settings": {},
+    },
   },
   "language_models": {
     "openai_compatible": {
@@ -159,14 +166,14 @@
           {
             "name": "gemini-2.5-flash",
             "display_name": "Gemini 2.5 Flash",
-            "max_tokens": 1048576
+            "max_tokens": 1048576,
           },
           {
             "name": "gemini-2.5-pro",
             "display_name": "Gemini 2.5 Pro",
-            "max_tokens": 1048576
-          }
-        ]
+            "max_tokens": 1048576,
+          },
+        ],
       },
       "NanoGPT": {
         "api_url": "https://nano-gpt.com/api/v1",
@@ -174,43 +181,49 @@
           {
             "name": "gemini-2.5-flash",
             "display_name": "Gemini 2.5 Flash",
-            "max_tokens": 1048576
+            "max_tokens": 1048576,
           },
           {
             "name": "gemini-2.5-pro",
             "display_name": "Gemini 2.5 Pro",
-            "max_tokens": 1048576
+            "max_tokens": 1048576,
           },
           {
             "name": "claude-sonnet-4-5-20250929",
             "display_name": "Claude Sonnet 4.5",
-            "max_tokens": 1048576
+            "max_tokens": 1048576,
           },
           {
             "name": "qwen/qwen3-coder",
             "display_name": "Qwen 3 Coder 480B",
-            "max_tokens": 1048576
+            "max_tokens": 1048576,
           },
           {
             "name": "deepseek/deepseek-v3.2-speciale",
             "display_name": "DeepSeek V3.2 Speciale",
             "max_tokens": 1000000,
-            "max_output_tokens": 1000000
+            "max_output_tokens": 1000000,
           },
           {
             "name": "deepseek/deepseek-v3.2",
             "display_name": "DeepSeek V3.2",
             "max_tokens": 1000000,
-            "max_output_tokens": 1000000
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "moonshotai/Kimi-K2-Instruct-0905",
+            "display_name": "Kimi K2 0905",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
           },
           {
             "name": "z-ai/glm-4.6",
             "display_name": "GLM 4.6",
             "max_tokens": 1000000,
-            "max_output_tokens": 1000000
-          }
-        ]
-      }
-    }
-  }
+            "max_output_tokens": 1000000,
+          },
+        ],
+      },
+    },
+  },
 }
