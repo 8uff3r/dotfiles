@@ -16,22 +16,22 @@
       "ctrl-'": "workspace::ToggleBottomDock",
       "ctrl-w": "pane::CloseActiveItem",
       "alt-.": "vim::ResizePaneRight",
-      "alt-,": "vim::ResizePaneLeft"
-    }
+      "alt-,": "vim::ResizePaneLeft",
+    },
   },
   {
     "context": "!GitPanel && Editor",
     "bindings": {
       "alt-k": "editor::MoveLineUp",
-      "alt-j": "editor::MoveLineDown"
-    }
+      "alt-j": "editor::MoveLineDown",
+    },
   },
   {
     "context": "GitPanel",
     "bindings": {
       "alt-j": "git_panel::FocusEditor",
-      "alt-k": "git_panel::FocusChanges"
-    }
+      "alt-k": "git_panel::FocusChanges",
+    },
   },
   {
     "context": "(VimControl && !Terminal) || (menu && !showing_completions && !edit_prediction) || EmptyPane",
@@ -50,23 +50,23 @@
       "space e": "workspace::ToggleLeftDock",
       "space s f": ["task::Spawn", { "task_name": "file_finder", "reveal_target": "center" }],
       "space s g": ["task::Spawn", { "task_name": "fulltext_search", "reveal_target": "center" }],
-      "shift-x": "vim::Exchange"
-    }
+      "shift-x": "vim::Exchange",
+    },
   },
   {
     "context": "VimControl && Editor",
     "bindings": {
       "s": "vim::PushSneak",
       "H": "pane::ActivatePreviousItem",
-      "L": "pane::ActivateNextItem"
-    }
+      "L": "pane::ActivateNextItem",
+    },
   },
   {
     "context": "Pane",
     "bindings": {
       "ctrl-alt-shift-h": null,
-      "ctrl-r": "search::ToggleReplace"
-    }
+      "ctrl-r": "search::ToggleReplace",
+    },
   },
   {
     "context": "Terminal",
@@ -74,8 +74,8 @@
       "ctrl-h": "pane::ActivatePreviousItem",
       "ctrl-l": "pane::ActivateNextItem",
       "alt-w v": "pane::SplitVertical",
-      "alt-w s": "pane::SplitHorizontal"
-    }
+      "alt-w s": "pane::SplitHorizontal",
+    },
   },
   {
     "context": "Editor && !menu",
@@ -83,55 +83,55 @@
       "ctrl-c": "editor::Copy", // vim default: return to normal mode
       "ctrl-x": "editor::Cut", // vim default: decrement
       "ctrl-s": "workspace::Save", // vim default: show signature
-      "ctrl-a": "editor::SelectAll" // vim default: increment
-    }
+      "ctrl-a": "editor::SelectAll", // vim default: increment
+    },
   },
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": "vim::PushAddSurrounds"
-    }
+      "shift-s": "vim::PushAddSurrounds",
+    },
   },
-  {
-    "context": "VimControl && !menu && vim_mode != operator",
-    "bindings": {
-      "w": "vim::NextSubwordStart",
-      "b": "vim::PreviousSubwordStart",
-      "e": "vim::NextSubwordEnd",
-      "g e": "vim::PreviousSubwordEnd"
-    }
-  },
+  // {
+  //   "context": "VimControl && !menu && vim_mode != operator",
+  //   "bindings": {
+  //     "w": "vim::NextSubwordStart",
+  //     "b": "vim::PreviousSubwordStart",
+  //     "e": "vim::NextSubwordEnd",
+  //     "g e": "vim::PreviousSubwordEnd"
+  //   }
+  // },
   {
     "context": "vim_operator == c",
     "bindings": {
-      "s": "vim::PushChangeSurrounds"
-    }
+      "s": "vim::PushChangeSurrounds",
+    },
   },
   {
     "context": "vim_operator == y",
     "bindings": {
-      "s": "vim::PushAddSurrounds"
-    }
+      "s": "vim::PushAddSurrounds",
+    },
   },
   {
     "context": "vim_operator == d",
     "bindings": {
-      "s": "vim::PushDeleteSurrounds"
-    }
+      "s": "vim::PushDeleteSurrounds",
+    },
   },
   {
     "context": "vim_mode == insert && Editor",
     "bindings": {
       "alt-h": "editor::NextEditPrediction",
       "alt-g": "editor::PreviousEditPrediction",
-      "alt-;": "editor::AcceptEditPrediction"
-    }
+      "alt-;": "editor::AcceptEditPrediction",
+    },
   },
   {
     "context": "multibuffer",
     "bindings": {
-      "alt-f": "search::FocusSearch"
-    }
+      "alt-f": "search::FocusSearch",
+    },
   },
   {
     "context": "(VimControl && !menu)",
@@ -139,10 +139,10 @@
       "j": [
         "vim::Down",
         {
-          "display_lines": true
-        }
-      ]
-    }
+          "display_lines": true,
+        },
+      ],
+    },
   },
   {
     "context": "(VimControl && !menu)",
@@ -150,15 +150,15 @@
       "k": [
         "vim::Up",
         {
-          "display_lines": true
-        }
-      ]
-    }
+          "display_lines": true,
+        },
+      ],
+    },
   },
   {
     "context": "AgentPanel || vim_mode == insert",
     "bindings": {
-      "ctrl-v": "editor::Paste"
-    }
-  }
+      "ctrl-v": "editor::Paste",
+    },
+  },
 ]

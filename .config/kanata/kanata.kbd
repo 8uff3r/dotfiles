@@ -1,0 +1,51 @@
+(defsrc
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+(defvar
+  tap-time 200
+  hold-time 200
+)
+(defalias
+    caps esc
+    esc caps
+    lsft bspc
+    _a (tap-hold-release $tap-time $hold-time a lmet)
+    _s (tap-hold-release $tap-time $hold-time s (multi lalt (layer-while-held layer-alt)))
+    _d (tap-hold-release $tap-time $hold-time d (multi lctl (layer-while-held layer-control)))
+    _f (tap-hold-release $tap-time $hold-time f lsft)
+    _i (tap-hold-release $tap-time $hold-time i lctl)
+    _o (tap-hold-release $tap-time $hold-time o lsft)
+    _sc (tap-hold-release $tap-time $hold-time ; lmet)
+    _ap (tap-hold-release $tap-time $hold-time ' lalt)
+)
+(deflayer base
+  @esc 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    @_i  @_o  p    [    ]    \
+  @caps @_a @_s @_d  @_f  g    h    j    k    l    @_sc @_ap ret
+  @lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(deflayer layer-control
+  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+  _  _  _  _  _  _  _  _  _  _  (unmod up)   _  _  _
+  _  _  _  _  _  _  _  _  _  _  _   _  _
+  _  _  _  _  _  _  (unmod down) _  _  _    _  _
+  _  _  _        _        _  _  _
+)
+
+(deflayer layer-alt
+  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+  _  _  _  _  _  _  _  _  _  _  (unmod right)   _  _  _
+  _  _  _  _  _  _  _  _  _  _  _   _  _
+  _  _  _  _  _  _  (unmod left) _  _  _    _  _
+  _  _  _        _        _  _  _
+)

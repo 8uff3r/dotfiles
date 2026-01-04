@@ -1,0 +1,93 @@
+(defsrc
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+;; Define variables for timeouts
+(defvar
+  tap-time 200
+  hold-time 250
+)
+
+;; Define which keys trigger the tap action early (typing keys)
+(defvar
+  typing-left-keys (q w e r t a s d f g z x c v b)
+  typing-right-keys (y u i o p h j k l ; n m , . /)
+)
+
+;; Aliases for home row mods using tap-hold-release-keys
+(defalias
+  ;; Capslock to escape when tapped, control when held (to activate layer-control)
+  caps esc
+
+  ;; Escape key to capslock
+  esc caps
+
+  ;; Left shift to backspace
+  lsft bspc
+
+  ;; Right shift stays as shift but we'll handle it in home row mods
+
+  ;; Home row mods using tap-hold-release-keys (similar to overloadt2)
+  ;; This sends the tap key immediately when typing, but modifier when held
+  ;; The early-tap trigger keys are typing keys
+
+  ;; a: tap = a, hold = meta (super/windows key)
+  _a (tap-hold-release-keys $tap-time $hold-time a lmet $typing-left-keys)
+
+  ;; s: tap = s, hold = alt + layer-alt
+  _s (tap-hold-release-keys $tap-time $hold-time s (multi lalt (layer-while-held layer-alt)) $typing-left-keys)
+
+  ;; d: tap = d, hold = control + layer-control
+  _d (tap-hold-release-keys $tap-time $hold-time d (multi lctl (layer-while-held layer-control)) $typing-left-keys)
+
+  ;; f: tap = f, hold = shift
+  _f (tap-hold-release-keys $tap-time $hold-time f lsft $typing-left-keys)
+
+  ;; i: tap = i, hold = control + layer-control
+  _i (tap-hold-release-keys $tap-time $hold-time i (multi lctl (layer-while-held layer-control)) $typing-right-keys)
+
+  ;; o: tap = o, hold = shift
+  _o (tap-hold-release-keys $tap-time $hold-time o lsft $typing-right-keys)
+
+  ;; ;: tap = ;, hold = meta (super/windows key)
+  _sc (tap-hold-release-keys $tap-time $hold-time ; lmet $typing-right-keys)
+
+  ;; ': tap = ', hold = alt + layer-alt
+  _ap (tap-hold-release-keys $tap-time $hold-time ' (multi lalt (layer-while-held layer-alt)) $typing-right-keys)
+)
+
+;; Base layer with exactly 60 items
+(deflayer base
+  @esc 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    @_i  @_o  p    [    ]    \
+  @caps @_a @_s @_d  @_f  g    h    j    k    l    @_sc @_ap ret
+  @lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; Navigation layer for control keys (C)
+(deflayer layer-control
+  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+  _  _  _  _  _  _  _  _  _  _  up  _  _  _
+  _  _  _  _  _  _  _  _  _  _  _   _  _
+  _  _  _  _  _  _  down _  _  _    _  _
+  _  _  _        _        _  _  _
+)
+
+;; Navigation layer for alt keys (A)
+(deflayer layer-alt
+  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+  _  _  _  _  _  _  _  _  _  _  right _  _  _
+  _  _  _  _  _  _  _  _  _  _  _   _  _
+  _  _  _  _  _  _  left _  _  _    _  _
+  _  _  _        _        _  _  _
+)

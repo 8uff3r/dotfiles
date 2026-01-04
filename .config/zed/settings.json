@@ -122,7 +122,7 @@
     "model_parameters": [],
     "default_model": {
       "provider": "NanoGPT",
-      "model": "qwen/qwen3-coder",
+      "model": "moonshotai/kimi-k2-thinking",
     },
   },
   "vim_mode": true,
@@ -142,6 +142,11 @@
   },
 
   "context_servers": {
+    "nuxt-hub": {
+      "enabled": true,
+      "url": "https://hub.nuxt.com/mcp",
+      "settings": {},
+    },
     "shadcn-vue": {
       "enabled": true,
       "command": "bunx",
@@ -179,21 +184,6 @@
         "api_url": "https://nano-gpt.com/api/v1",
         "available_models": [
           {
-            "name": "gemini-2.5-flash",
-            "display_name": "Gemini 2.5 Flash",
-            "max_tokens": 1048576,
-          },
-          {
-            "name": "gemini-2.5-pro",
-            "display_name": "Gemini 2.5 Pro",
-            "max_tokens": 1048576,
-          },
-          {
-            "name": "claude-sonnet-4-5-20250929",
-            "display_name": "Claude Sonnet 4.5",
-            "max_tokens": 1048576,
-          },
-          {
             "name": "qwen/qwen3-coder",
             "display_name": "Qwen 3 Coder 480B",
             "max_tokens": 1048576,
@@ -211,14 +201,32 @@
             "max_output_tokens": 1000000,
           },
           {
+            "name": "zai-org/glm-4.7",
+            "display_name": "GLM 4.7",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "minimax/minimax-m2.1",
+            "display_name": "MiniMax M2.1",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "xiaomi/mimo-v2-flash",
+            "display_name": "MiMo V2 Flash",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
             "name": "moonshotai/Kimi-K2-Instruct-0905",
             "display_name": "Kimi K2 0905",
             "max_tokens": 1000000,
             "max_output_tokens": 1000000,
           },
           {
-            "name": "z-ai/glm-4.6",
-            "display_name": "GLM 4.6",
+            "name": "moonshotai/kimi-k2-thinking",
+            "display_name": "Kimi K2 Thinking",
             "max_tokens": 1000000,
             "max_output_tokens": 1000000,
           },
