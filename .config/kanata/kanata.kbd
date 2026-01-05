@@ -34,6 +34,14 @@
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
+(deflayer games
+  @esc  _  _  _  _  _  _  _  _  _  _  _  _  _
+  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+  @caps  _  _  _  _  _  _  _  _  _  _  _  _
+  _  _  _  _  _  _  _  _  _  _    _  _
+  _  _  _        _        _  _  _
+)
+
 (deflayer layer-control
   _  _  _  _  _  _  _  _  _  _  _  _  _  _
   _  _  _  _  _  _  _  _  _  _  (unmod up)   _  _  _
