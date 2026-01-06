@@ -1,10 +1,10 @@
 [
   {
-    "class": "steam-app-*",
+    "class": "steam-app-.*",
     "layer": "games"
   },
   {
-    "class": "steam_app_*",
+    "class": "steam_app_.*",
     "layer": "games"
   },
   { "class": "*", "title": "*", "layer": "base" }
