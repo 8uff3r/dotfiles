@@ -161,8 +161,6 @@ BorderSize=None
 BorderSizeAuto=false
 ButtonsOnLeft=MFS
 ButtonsOnRight=HIAX
-library=org.kde.klassy
-theme=Klassy
 
 [ًRound-Corners]
 InactiveShadowSize=1

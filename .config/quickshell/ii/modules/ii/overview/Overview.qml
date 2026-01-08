@@ -129,6 +129,16 @@ Scope {
         GlobalStates.overviewOpen = true;
     }
 
+    function toggleApps() {
+        if (GlobalStates.overviewOpen && overviewScope.dontAutoCancelSearch) {
+            GlobalStates.overviewOpen = false;
+            return;
+        }
+        overviewScope.dontAutoCancelSearch = true;
+        panelWindow.setSearchingText(Config.options.search.prefix.app);
+        GlobalStates.overviewOpen = true;
+    }
+
     IpcHandler {
         target: "search"
 
@@ -149,6 +159,9 @@ Scope {
         }
         function clipboardToggle() {
             overviewScope.toggleClipboard();
+        }
+        function appsToggle() {
+            overviewScope.toggleApps();
         }
     }
 
@@ -215,6 +228,14 @@ Scope {
 
         onPressed: {
             overviewScope.toggleEmojis();
+        }
+    }
+    GlobalShortcut {
+        name: "overviewAppsToggle"
+        description: "Toggle app query on overview widget"
+
+        onPressed: {
+            overviewScope.toggleApps();
         }
     }
 }
