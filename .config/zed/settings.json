@@ -122,7 +122,7 @@
     "model_parameters": [],
     "default_model": {
       "provider": "NanoGPT",
-      "model": "moonshotai/kimi-k2-thinking",
+      "model": "qwen/qwen3-coder",
     },
   },
   "vim_mode": true,

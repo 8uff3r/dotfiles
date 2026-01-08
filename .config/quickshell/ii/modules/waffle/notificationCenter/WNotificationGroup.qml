@@ -1,3 +1,4 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
@@ -7,19 +8,55 @@ import qs.modules.common.widgets
 import qs.modules.common.functions
 import qs.modules.waffle.looks
 
+// TODO: Swipe to dismiss
 MouseArea {
     id: root
 
     required property var notificationGroup
     readonly property var notifications: notificationGroup?.notifications ?? []
+    property bool expanded: false
 
     implicitWidth: contentLayout.implicitWidth
     implicitHeight: contentLayout.implicitHeight
 
+    function dismissAll() {
+        root.notifications.forEach(notif => {
+            Qt.callLater(() => {
+                Notifications.discardNotification(notif.notificationId);
+            });
+        });
+        removeAnimation.start();
+    }
+
+    WNotificationDismissAnim {
+        id: removeAnimation
+        target: root
+    }
+
+    property real dragDismissThreshold: 100
+    drag {
+        axis: Drag.XAxis
+        target: contentLayout
+        minimumX: 0
+        onActiveChanged: {
+            if (drag.active)
+                return;
+            if (contentLayout.x > root.dragDismissThreshold) {
+                root.dismissAll();
+            } else {
+                contentLayout.x = 0;
+            }
+        }
+    }
+
     ColumnLayout {
         id: contentLayout
-        anchors.fill: parent
         spacing: 4
+        width: root.width
+
+        Behavior on x {
+            animation: Looks.transition.enter.createObject(this)
+        }
 
         GroupHeader {
             id: notifHeader
@@ -27,19 +64,38 @@ MouseArea {
             Layout.margins: 11
         }
 
-        ListView {
+        WListView {
+            Layout.leftMargin: -Math.min(35, contentLayout.x)
+            Layout.rightMargin: -Layout.leftMargin
             Layout.fillWidth: true
             implicitWidth: notifHeader.implicitWidth
             implicitHeight: contentHeight
             interactive: false
             spacing: 4
             model: ScriptModel {
-                values: root.notifications.slice().reverse()
+                values: root.expanded ? root.notifications.slice().reverse() : root.notifications.slice(-1)
+                objectProp: "notificationId"
             }
             delegate: WSingleNotification {
+                id: singleNotif
+                required property int index
                 required property var modelData
+
                 width: ListView.view.width
                 notification: modelData
+
+                groupExpandControlMessage: {
+                    if (root.notifications.length <= 1)
+                        return "";
+                    if (!root.expanded)
+                        return Translation.tr("+%1 notifications").arg(root.notifications.length - 1);
+                    if (index === root.notifications.length - 1)
+                        return Translation.tr("See fewer");
+                    return "";
+                }
+                onGroupExpandToggle: {
+                    root.expanded = !root.expanded;
+                }
             }
         }
     }
@@ -81,11 +137,7 @@ MouseArea {
                 Layout.rightMargin: 3
                 icon.name: "dismiss"
                 onClicked: {
-                    root.notifications.forEach(notif => {
-                        Qt.callLater(() => {
-                            Notifications.discardNotification(notif.notificationId);
-                        });
-                    });
+                    root.dismissAll();
                 }
             }
         }
